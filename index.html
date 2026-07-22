@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DietCare — Evidence-Based Nutrition & Weight Management</title>
-<meta name="description" content="DietCare PK — Personalised, science-backed diet counseling for weight management, PCOS, diabetes, and holistic health in Pakistan.">
+<title>Bloomfield Nutrition &mdash; Amara Reyes, RD | Registered Dietitian &amp; Nutrition Consultant</title>
+<meta name="description" content="Bloomfield Nutrition is the private practice of Amara Reyes, RD — evidence-based, personalized nutrition counseling for weight management, PCOS, diabetes, pregnancy, and child nutrition.">
 <meta name="theme-color" content="#4B5A3F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ============================= TOKENS & RESET ============================= */
-:root {
+/* ============================= TOKENS ============================= */
+:root{
   --white:#FBFAF6;
   --cream:#F6F1E7;
   --sand:#EAE1CD;
@@ -26,673 +26,1746 @@
   --ink-soft:#6B6558;
   --ink-faint:#948E80;
   --line:#E3DBC9;
-  --radius-lg:24px;
-  --radius-md:16px;
-  --radius-sm:10px;
-  --shadow-soft:0 20px 50px -24px rgba(43,40,31,0.25);
-  --shadow-card:0 14px 34px -18px rgba(43,40,31,0.18);
+  --radius-lg:28px;
+  --radius-md:18px;
+  --radius-sm:12px;
+  --shadow-soft:0 20px 50px -24px rgba(43,40,31,0.28);
+  --shadow-card:0 14px 34px -18px rgba(43,40,31,0.22);
   --font-display:'Fraunces', Georgia, serif;
   --font-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --container:1180px;
 }
 *,*::before,*::after{box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
+}
 body{
-  margin:0;font-family:var(--font-body);color:var(--ink);background:var(--white);
-  line-height:1.6;-webkit-font-smoothing:antialiased;
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
 img,svg{display:block;max-width:100%;}
 a{color:inherit;text-decoration:none;}
 ul{list-style:none;margin:0;padding:0;}
-button,input,select,textarea{font-family:inherit;font-size:1rem;}
+button{font-family:inherit;cursor:pointer;}
+input,select,textarea{font-family:inherit;font-size:1rem;}
 h1,h2,h3,h4{font-family:var(--font-display);margin:0;font-weight:500;color:var(--ink);letter-spacing:-0.01em;}
 p{margin:0;}
+:focus-visible{outline:2.5px solid var(--clay);outline-offset:3px;border-radius:4px;}
 
-.container{max-width:var(--container);margin:0 auto;padding:0 24px;}
-.section{padding:80px 0;}
-.section-tight{padding:48px 0;}
-.section-head{max-width:640px;margin-bottom:44px;}
-.section-head h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-top:12px;line-height:1.2;}
-.section-head p{margin-top:12px;color:var(--ink-soft);font-size:1.02rem;}
+.skip-link{
+  position:absolute;left:-999px;top:auto;background:var(--sage-deep);color:#fff;padding:12px 20px;
+  border-radius:0 0 10px 0;z-index:9999;font-weight:600;
+}
+.skip-link:focus{left:0;top:0;}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;}
+.eyebrow{
+  font-family:var(--font-body);text-transform:uppercase;letter-spacing:0.16em;font-size:0.74rem;
+  font-weight:600;color:var(--sage-deep);display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';width:22px;height:1px;background:var(--clay);display:inline-block;}
+.section{padding:96px 0;}
+.section-tight{padding:64px 0;}
+@media (max-width:768px){ .section{padding:64px 0;} .section-tight{padding:44px 0;} }
+
+.section-head{max-width:640px;margin-bottom:52px;}
+.section-head h2{font-size:clamp(1.9rem,3.4vw,2.7rem);margin-top:14px;line-height:1.15;}
+.section-head p{margin-top:16px;color:var(--ink-soft);font-size:1.05rem;}
 .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
 
-.eyebrow{
-  font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;
-  color:var(--sage-deep);display:inline-flex;align-items:center;gap:8px;
-}
-.eyebrow::before{content:'';width:18px;height:2px;background:var(--clay);display:inline-block;}
-
-/* BUTTONS */
 .btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 28px;border-radius:999px;font-weight:600;font-size:0.92rem;
-  border:1.5px solid transparent;transition:all .3s ease;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:999px;font-weight:600;font-size:0.95rem;
+  border:1.5px solid transparent;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,background .3s,color .3s,border-color .3s;
+  white-space:nowrap;
 }
-.btn-primary{background:var(--sage-deep);color:#fff;box-shadow:0 10px 24px -10px rgba(70,82,57,0.5);}
-.btn-primary:hover{background:#3a4530;transform:translateY(-2px);}
-.btn-clay{background:var(--clay);color:#fff;}
-.btn-clay:hover{background:var(--clay-deep);transform:translateY(-2px);}
-.btn-outline{border-color:var(--ink);color:var(--ink);background:transparent;}
-.btn-outline:hover{background:var(--ink);color:#fff;}
-.btn-sm{padding:9px 18px;font-size:0.85rem;}
+.btn-primary{background:var(--sage-deep);color:#fff;box-shadow:0 14px 30px -14px rgba(70,82,57,0.55);}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 38px -14px rgba(70,82,57,0.6);background:#3a4530;}
+.btn-clay{background:var(--clay);color:#fff;box-shadow:0 14px 30px -14px rgba(189,126,82,0.55);}
+.btn-clay:hover{transform:translateY(-3px);background:var(--clay-deep);}
+.btn-outline{background:transparent;border-color:var(--ink);color:var(--ink);}
+.btn-outline:hover{background:var(--ink);color:#fff;transform:translateY(-3px);}
+.btn-ghost{background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.5);color:#fff;backdrop-filter:blur(6px);}
+.btn-ghost:hover{background:rgba(255,255,255,0.28);transform:translateY(-3px);}
+.btn-sm{padding:10px 20px;font-size:0.85rem;}
+.btn svg{width:17px;height:17px;}
 
-/* ============================= HEADER ============================= */
+/* ============================= ICONS ============================= */
+.icon{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ============================= HEADER / NAV ============================= */
 header.site-header{
-  position:sticky;top:0;z-index:500;background:rgba(251,250,246,0.92);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:500;background:rgba(251,250,246,0.86);backdrop-filter:blur(14px) saturate(140%);
+  border-bottom:1px solid var(--line);transition:box-shadow .3s;
 }
-.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:var(--container);margin:0 auto;}
-.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.35rem;font-weight:600;color:var(--sage-deep);}
-.brand span.mark{
-  width:36px;height:36px;background:var(--sage-deep);color:#fff;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;
-}
-.brand em{font-style:normal;color:var(--clay);}
-nav.main-nav{display:flex;align-items:center;gap:6px;}
-nav.main-nav button.nav-link{
-  background:none;border:none;padding:8px 16px;font-size:0.92rem;font-weight:500;
-  color:var(--ink-soft);border-radius:999px;cursor:pointer;transition:all .2s;
-}
-nav.main-nav button.nav-link:hover, nav.main-nav button.nav-link.active{
-  background:var(--sage-pale);color:var(--sage-deep);font-weight:600;
-}
-.menu-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--ink);cursor:pointer;}
+header.site-header.scrolled{box-shadow:0 10px 30px -20px rgba(43,40,31,0.35);}
+.nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:var(--container);margin:0 auto;gap:20px;}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-size:1.28rem;font-weight:600;color:var(--sage-deep);}
+.brand .mark{width:38px;height:38px;flex:none;}
+.brand .name em{font-style:normal;color:var(--clay);}
+.brand small{display:block;font-family:var(--font-body);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;margin-top:1px;}
 
-@media (max-width:860px){
-  .menu-toggle{display:block;}
-  nav.main-nav{
-    position:fixed;top:68px;right:0;width:260px;height:calc(100vh - 68px);background:#fff;
-    flex-direction:column;align-items:stretch;padding:24px;border-left:1px solid var(--line);
-    transform:translateX(100%);transition:transform .3s ease;box-shadow:-10px 0 30px rgba(0,0,0,0.05);
-  }
+nav.main-nav{display:flex;align-items:center;gap:2px;}
+nav.main-nav > ul{display:flex;align-items:center;gap:2px;}
+nav.main-nav a.nav-link, nav.main-nav button.nav-link{
+  display:inline-block;padding:10px 14px;font-size:0.92rem;font-weight:500;color:var(--ink-soft);
+  border-radius:999px;transition:background .25s,color .25s;background:none;border:none;
+}
+nav.main-nav a.nav-link:hover, nav.main-nav button.nav-link:hover, nav.main-nav a.nav-link.active{
+  background:var(--sage-pale);color:var(--sage-deep);
+}
+.has-dropdown{position:relative;}
+.dropdown{
+  position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);min-width:230px;
+  background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-soft);padding:10px;border:1px solid var(--line);
+  opacity:0;visibility:hidden;transition:opacity .25s,transform .25s;
+}
+.has-dropdown:hover .dropdown, .has-dropdown:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.dropdown a{display:block;padding:10px 14px;border-radius:10px;font-size:0.9rem;color:var(--ink-soft);}
+.dropdown a:hover{background:var(--sage-pale);color:var(--sage-deep);}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.menu-toggle{display:none;background:none;border:none;padding:8px;color:var(--ink);}
+.menu-toggle .icon{width:26px;height:26px;}
+
+@media (max-width:980px){
+  nav.main-nav{position:fixed;inset:0 0 0 auto;width:min(84vw,360px);height:100vh;background:var(--white);
+    padding:96px 26px 26px;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 60px rgba(0,0,0,0.15);overflow-y:auto;}
   nav.main-nav.open{transform:translateX(0);}
-  nav.main-nav button.nav-link{text-align:left;width:100%;padding:12px;}
+  nav.main-nav > ul{flex-direction:column;align-items:stretch;gap:4px;}
+  nav.main-nav a.nav-link, nav.main-nav button.nav-link{width:100%;text-align:left;padding:13px 16px;}
+  .dropdown{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;background:var(--cream);margin:4px 0 8px;display:none;}
+  .has-dropdown.open .dropdown{display:block;}
+  .menu-toggle{display:inline-flex;}
+  .nav-actions .btn-primary{display:none;}
+  .nav-scrim{position:fixed;inset:0;background:rgba(20,18,12,0.35);opacity:0;visibility:hidden;transition:opacity .3s;z-index:400;}
+  .nav-scrim.show{opacity:1;visibility:visible;}
 }
+@media (min-width:981px){ .nav-actions .btn-sm.mobile-only{display:none;} }
 
-/* ============================= PAGES ============================= */
-.page{display:none;}
-.page.active{display:block;animation:fadeIn .4s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+/* ============================= HERO ============================= */
+.hero{position:relative;overflow:hidden;padding:70px 0 40px;}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+@media (max-width:900px){ .hero-grid{grid-template-columns:1fr;gap:40px;} }
+.hero-copy h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.08;margin-top:18px;}
+.hero-copy h1 em{font-style:italic;color:var(--sage-deep);}
+.hero-copy p.lead{margin-top:22px;font-size:1.14rem;color:var(--ink-soft);max-width:520px;}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;}
+.hero-stats{display:flex;gap:34px;margin-top:48px;flex-wrap:wrap;}
+.hero-stats div strong{display:block;font-family:var(--font-display);font-size:1.7rem;color:var(--sage-deep);}
+.hero-stats div span{font-size:0.82rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.08em;}
 
-/* ============================= HOME HERO ============================= */
-.hero{padding:60px 0 40px;background:linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);}
-.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr;}}
-.hero h1{font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.12;margin-top:16px;}
-.hero h1 em{font-style:italic;color:var(--sage-deep);}
-.hero p.lead{margin-top:18px;font-size:1.1rem;color:var(--ink-soft);}
-.hero-cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;}
-.hero-card{
-  background:#fff;border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow-soft);
-  border:1px solid var(--line);position:relative;
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px;}
+.blob-frame{position:relative;width:min(420px,88vw);aspect-ratio:1/1.08;}
+.blob-shape{
+  position:absolute;inset:0;background:linear-gradient(160deg,var(--sage-light),var(--sage-deep));
+  border-radius:62% 38% 55% 45%/54% 45% 55% 46%;animation:blobmorph 12s ease-in-out infinite;box-shadow:var(--shadow-soft);
+  overflow:hidden;
 }
-.badge-pill{
-  display:inline-block;padding:6px 14px;border-radius:999px;background:var(--sage-pale);
-  color:var(--sage-deep);font-size:0.8rem;font-weight:700;margin-bottom:14px;
+.blob-shape svg{position:absolute;inset:0;width:100%;height:100%;}
+@keyframes blobmorph{
+  0%,100%{border-radius:62% 38% 55% 45%/54% 45% 55% 46%;}
+  33%{border-radius:45% 55% 40% 60%/60% 40% 60% 40%;}
+  66%{border-radius:55% 45% 62% 38%/40% 60% 40% 60%;}
 }
+.floating-card{
+  position:absolute;background:#fff;border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:16px 18px;
+  display:flex;align-items:center;gap:12px;animation:floaty 5s ease-in-out infinite;
+}
+.floating-card.card-a{top:6%;left:-8%;animation-delay:0s;}
+.floating-card.card-b{bottom:8%;right:-10%;animation-delay:1.4s;}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.floating-card .ic{width:38px;height:38px;border-radius:50%;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;flex:none;}
+.floating-card .ic.clay{background:#F3E3D6;}
+.floating-card .ic svg{width:19px;height:19px;color:var(--sage-deep);}
+.floating-card .ic.clay svg{color:var(--clay-deep);}
+.floating-card strong{display:block;font-size:0.92rem;}
+.floating-card span{font-size:0.76rem;color:var(--ink-faint);}
+@media (max-width:600px){.floating-card{padding:11px 13px;} .floating-card strong{font-size:0.8rem;} .floating-card span{font-size:0.68rem;}}
 
-/* ============================= GRIDS & CARDS ============================= */
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-@media (max-width:860px){.grid-3,.grid-2{grid-template-columns:1fr;}}
+.leaf-decor{position:absolute;opacity:0.5;color:var(--sage-light);pointer-events:none;}
+
+/* trust strip */
+.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;background:var(--cream);}
+.trust-strip .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px;}
+.trust-strip span.label{font-size:0.76rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--ink-faint);font-weight:600;}
+.trust-strip .badges{display:flex;gap:34px;flex-wrap:wrap;align-items:center;}
+.trust-strip .badges div{display:flex;align-items:center;gap:9px;font-size:0.9rem;color:var(--ink-soft);font-weight:500;}
+.trust-strip .badges svg{width:20px;height:20px;color:var(--sage-deep);}
+
+/* ============================= CARDS / GRIDS ============================= */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+@media (max-width:980px){ .grid-3{grid-template-columns:repeat(2,1fr);} .grid-4{grid-template-columns:repeat(2,1fr);} }
+@media (max-width:640px){ .grid-3,.grid-2,.grid-4{grid-template-columns:1fr;} }
 
 .card{
-  background:#fff;border-radius:var(--radius-md);padding:28px;border:1px solid var(--line);
-  box-shadow:var(--shadow-card);transition:transform .3s, box-shadow .3s;
+  background:#fff;border-radius:var(--radius-lg);padding:34px 30px;box-shadow:var(--shadow-card);
+  border:1px solid var(--line);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s;
 }
-.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft);}
-.card-icon{
-  width:48px;height:48px;border-radius:12px;background:var(--sage-pale);
-  display:flex;align-items:center;justify-content:center;margin-bottom:18px;color:var(--sage-deep);
-  font-size:1.3rem;font-weight:bold;
-}
-.card h3{font-size:1.2rem;margin-bottom:10px;}
-.card p{color:var(--ink-soft);font-size:0.94rem;}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -24px rgba(43,40,31,0.32);}
+.card .ic-wrap{width:56px;height:56px;border-radius:16px;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.card .ic-wrap svg{width:26px;height:26px;color:var(--sage-deep);}
+.card.clay .ic-wrap{background:#F3E3D6;}
+.card.clay .ic-wrap svg{color:var(--clay-deep);}
+.card h3{font-size:1.24rem;margin-bottom:10px;}
+.card p{color:var(--ink-soft);font-size:0.96rem;}
+.card a.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-weight:600;font-size:0.9rem;color:var(--sage-deep);}
+.card a.card-link svg{width:15px;height:15px;transition:transform .3s;}
+.card a.card-link:hover svg{transform:translateX(4px);}
 
-/* ============================= CALCULATOR ============================= */
-.calc-box{
-  background:#fff;border-radius:var(--radius-lg);padding:36px;border:1px solid var(--line);
-  box-shadow:var(--shadow-soft);max-width:720px;margin:0 auto;
-}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
-@media (max-width:540px){.form-row{grid-template-columns:1fr;}}
-.form-group{display:flex;flex-direction:column;gap:6px;}
-.form-group label{font-size:0.85rem;font-weight:600;color:var(--ink);}
-.form-group input, .form-group select, .form-group textarea{
-  padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--radius-sm);
-  background:var(--white);outline:none;transition:border-color .2s;
-}
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus{
-  border-color:var(--sage-deep);
-}
-.calc-result{
-  margin-top:24px;padding:20px;background:var(--sage-pale);border-radius:var(--radius-sm);
-  display:none;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
-}
-.calc-result.show{display:flex;}
-.calc-result .val{font-family:var(--font-display);font-size:2rem;color:var(--sage-deep);font-weight:600;}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;background:var(--sage-pale);color:var(--sage-deep);font-size:0.78rem;font-weight:600;}
 
-/* ============================= MEAL PLAN TAB PREVIEW ============================= */
-.tab-row{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;justify-content:center;}
-.tab-btn{
-  padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;
-  font-weight:600;font-size:0.88rem;cursor:pointer;transition:all .2s;
-}
-.tab-btn.active{background:var(--sage-deep);color:#fff;border-color:var(--sage-deep);}
-.meal-box{background:#fff;border-radius:var(--radius-md);padding:24px;border:1px solid var(--line);}
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal-stagger > *{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1);}
+.reveal-stagger.in > *{opacity:1;transform:translateY(0);}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.02s;}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.11s;}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.2s;}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.29s;}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.38s;}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.47s;}
 
-/* ============================= FAQ ACCORDION ============================= */
-.faq-item{border:1px solid var(--line);border-radius:var(--radius-sm);background:#fff;margin-bottom:12px;overflow:hidden;}
-.faq-q{
-  width:100%;text-align:left;padding:18px 20px;background:none;border:none;
-  font-weight:600;font-size:1rem;color:var(--ink);display:flex;justify-content:space-between;
-  align-items:center;cursor:pointer;
+/* ============================= BAND / DIVIDERS ============================= */
+.band{background:var(--sage-deep);color:#fff;position:relative;overflow:hidden;}
+.band .container{position:relative;z-index:2;}
+.band h2,.band h3{color:#fff;}
+.band-cream{background:var(--cream);}
+.band-sand{background:linear-gradient(180deg,var(--sand) 0%,var(--cream) 100%);}
+
+.divider-organic{height:64px;position:relative;}
+.divider-organic svg{position:absolute;bottom:-1px;width:100%;height:100%;}
+
+/* ============================= WHY CHOOSE ============================= */
+.why-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 32px;margin-top:10px;}
+@media (max-width:640px){.why-list{grid-template-columns:1fr;}}
+.why-item{display:flex;gap:16px;align-items:flex-start;}
+.why-item .num{font-family:var(--font-display);font-size:1.5rem;color:var(--clay);flex:none;width:44px;}
+.why-item h4{font-size:1.05rem;margin-bottom:6px;}
+.why-item p{color:var(--ink-soft);font-size:0.92rem;}
+
+/* ============================= PROCESS ============================= */
+.process-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:20px;}
+@media (max-width:900px){.process-track{grid-template-columns:1fr;gap:36px;}}
+.process-step{position:relative;padding:0 22px;text-align:left;}
+.process-step::before{content:'';position:absolute;top:34px;left:0;width:100%;height:1px;background:var(--line);}
+.process-step:first-child::before{left:50%;width:50%;}
+.process-step:last-child::before{width:50%;}
+@media (max-width:900px){.process-step::before{display:none;}}
+.process-num{width:68px;height:68px;border-radius:50%;background:#fff;border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;color:var(--sage-deep);position:relative;z-index:1;box-shadow:var(--shadow-card);}
+.process-step h4{margin:18px 0 8px;font-size:1.08rem;}
+.process-step p{color:var(--ink-soft);font-size:0.9rem;}
+
+/* ============================= BEFORE/AFTER ============================= */
+.transform-slider{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);aspect-ratio:16/10;background:var(--sand);}
+.transform-slider .ba-img{position:absolute;inset:0;width:100%;height:100%;}
+.transform-slider .ba-before{background:linear-gradient(135deg,#DCD2B8,#C9BB98);}
+.transform-slider .ba-after{background:linear-gradient(135deg,var(--sage-light),var(--sage-deep));clip-path:inset(0 0 0 50%);}
+.transform-slider .ba-label{position:absolute;top:16px;padding:7px 16px;border-radius:999px;background:rgba(255,255,255,0.85);font-size:0.78rem;font-weight:700;letter-spacing:0.05em;color:var(--ink);backdrop-filter:blur(6px);}
+.transform-slider .ba-label.before{left:16px;}
+.transform-slider .ba-label.after{right:16px;background:rgba(70,82,57,0.85);color:#fff;}
+.transform-slider input[type=range]{position:absolute;bottom:16px;left:8%;width:84%;accent-color:#fff;z-index:3;}
+.transform-slider .handle{position:absolute;top:0;bottom:0;width:3px;background:#fff;left:50%;transform:translateX(-1.5px);box-shadow:0 0 0 4px rgba(255,255,255,0.35);z-index:2;pointer-events:none;}
+.ba-caption{text-align:center;margin-top:18px;color:var(--ink-soft);font-size:0.9rem;}
+
+/* ============================= TESTIMONIALS ============================= */
+.testi-wrap{position:relative;max-width:760px;margin:0 auto;}
+.testi-slide{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:48px 44px;text-align:center;display:none;border:1px solid var(--line);}
+.testi-slide.active{display:block;animation:fadein .6s ease;}
+@keyframes fadein{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+.testi-stars{display:flex;gap:4px;justify-content:center;margin-bottom:18px;color:var(--clay);}
+.testi-stars svg{width:18px;height:18px;fill:var(--clay);stroke:none;}
+.testi-slide q{font-family:var(--font-display);font-size:1.32rem;line-height:1.5;font-style:italic;color:var(--ink);display:block;}
+.testi-person{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:26px;}
+.testi-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--sage-light),var(--sage-deep));flex:none;}
+.testi-person strong{display:block;font-size:0.94rem;}
+.testi-person span{font-size:0.8rem;color:var(--ink-faint);}
+.testi-nav{display:flex;justify-content:center;gap:12px;margin-top:28px;align-items:center;}
+.testi-dot{width:9px;height:9px;border-radius:50%;background:var(--sand-deep);border:none;padding:0;transition:background .3s,transform .3s;}
+.testi-dot.active{background:var(--sage-deep);transform:scale(1.3);}
+.testi-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s;}
+.testi-arrow:hover{background:var(--sage-deep);color:#fff;}
+.testi-arrow svg{width:17px;height:17px;}
+
+/* ============================= PRICING ============================= */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch;}
+@media (max-width:900px){.pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}}
+.price-card{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-lg);padding:36px 30px;display:flex;flex-direction:column;transition:transform .4s,box-shadow .4s,border-color .4s;position:relative;}
+.price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.price-card.featured{border-color:var(--sage-deep);background:linear-gradient(180deg,#fff,var(--sage-pale) 260%);}
+.price-card .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--clay);color:#fff;padding:6px 18px;border-radius:999px;font-size:0.74rem;font-weight:700;letter-spacing:0.05em;white-space:nowrap;}
+.price-card h3{font-size:1.2rem;}
+.price-card .price{font-family:var(--font-display);font-size:2.5rem;margin:14px 0 4px;color:var(--sage-deep);}
+.price-card .price span{font-size:0.95rem;font-family:var(--font-body);color:var(--ink-faint);font-weight:500;}
+.price-card ul{margin:24px 0 28px;display:flex;flex-direction:column;gap:12px;flex:1;}
+.price-card ul li{display:flex;gap:10px;font-size:0.9rem;color:var(--ink-soft);align-items:flex-start;}
+.price-card ul li svg{width:17px;height:17px;color:var(--sage-deep);flex:none;margin-top:2px;}
+
+/* ============================= CALCULATORS ============================= */
+.calc-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:40px;border:1px solid var(--line);}
+.calc-tabs{display:flex;gap:8px;background:var(--cream);padding:6px;border-radius:999px;margin-bottom:28px;max-width:340px;}
+.calc-tab{flex:1;padding:10px 16px;border:none;background:transparent;border-radius:999px;font-weight:600;font-size:0.88rem;color:var(--ink-soft);transition:background .3s,color .3s;}
+.calc-tab.active{background:var(--sage-deep);color:#fff;}
+.field-row{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+@media (max-width:560px){.field-row{grid-template-columns:1fr;}}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;}
+.field label{font-size:0.83rem;font-weight:600;color:var(--ink);}
+.field input, .field select{
+  padding:13px 16px;border:1.5px solid var(--line);border-radius:var(--radius-sm);background:var(--white);
+  transition:border-color .25s,box-shadow .25s;
 }
-.faq-a{padding:0 20px 18px;color:var(--ink-soft);font-size:0.94rem;display:none;}
-.faq-item.open .faq-a{display:block;}
+.field input:focus, .field select:focus{border-color:var(--sage);box-shadow:0 0 0 4px var(--sage-pale);outline:none;}
+.unit-toggle{display:inline-flex;background:var(--cream);border-radius:999px;padding:4px;margin-bottom:20px;}
+.unit-toggle button{padding:8px 18px;border:none;background:transparent;border-radius:999px;font-size:0.84rem;font-weight:600;color:var(--ink-soft);}
+.unit-toggle button.active{background:var(--sage-deep);color:#fff;}
+.calc-result{margin-top:10px;background:var(--sage-pale);border-radius:var(--radius-md);padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.calc-result .num{font-family:var(--font-display);font-size:2.6rem;color:var(--sage-deep);}
+.calc-result .cat{font-weight:700;color:var(--clay-deep);font-size:0.9rem;text-transform:uppercase;letter-spacing:0.06em;}
+.calc-scale{display:flex;height:8px;border-radius:999px;overflow:hidden;margin-top:16px;width:100%;}
+.calc-scale span{flex:1;}
+.bmi-bar-under{background:#CBB27E;} .bmi-bar-normal{background:var(--sage);} .bmi-bar-over{background:#D79A5C;} .bmi-bar-obese{background:#C06A4C;}
+
+/* ============================= FORMS (contact / book / newsletter) ============================= */
+.form-card{background:#fff;border-radius:var(--radius-lg);box-shadow:var(--shadow-soft);padding:40px;border:1px solid var(--line);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media (max-width:560px){.form-grid{grid-template-columns:1fr;}}
+.field.full{grid-column:1/-1;}
+textarea{resize:vertical;min-height:120px;padding:13px 16px;border:1.5px solid var(--line);border-radius:var(--radius-sm);width:100%;}
+textarea:focus{border-color:var(--sage);box-shadow:0 0 0 4px var(--sage-pale);outline:none;}
+.form-success{display:none;background:var(--sage-pale);border-radius:var(--radius-md);padding:20px 24px;align-items:center;gap:14px;margin-top:20px;color:var(--sage-deep);font-weight:600;}
+.form-success.show{display:flex;animation:fadein .5s ease;}
+.form-success svg{width:24px;height:24px;flex:none;}
+
+/* ============================= FAQ ============================= */
+.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+details.faq-item{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-md);padding:6px 4px;transition:border-color .3s;}
+details.faq-item[open]{border-color:var(--sage);}
+details.faq-item summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:600;font-size:1rem;}
+details.faq-item summary::-webkit-details-marker{display:none;}
+details.faq-item summary .plus{width:30px;height:30px;border-radius:50%;background:var(--sage-pale);display:flex;align-items:center;justify-content:center;flex:none;position:relative;}
+details.faq-item summary .plus svg{width:14px;height:14px;color:var(--sage-deep);transition:transform .3s;}
+details.faq-item[open] summary .plus svg{transform:rotate(45deg);}
+details.faq-item .faq-a{padding:0 22px 20px 22px;color:var(--ink-soft);font-size:0.95rem;line-height:1.65;}
+
+/* ============================= BLOG ============================= */
+.blog-card{border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow-card);border:1px solid var(--line);transition:transform .4s,box-shadow .4s;}
+.blog-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-soft);}
+.blog-thumb{height:170px;position:relative;}
+.blog-body{padding:24px 26px 28px;}
+.blog-meta{display:flex;gap:12px;font-size:0.76rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;}
+.blog-body h3{font-size:1.14rem;margin-bottom:10px;line-height:1.35;}
+.blog-body p{color:var(--ink-soft);font-size:0.9rem;}
 
 /* ============================= FOOTER ============================= */
-footer{background:var(--sage-deep);color:#ECEAE1;padding:60px 0 24px;margin-top:80px;}
-.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3, 1fr);gap:32px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.15);}
-@media (max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;}}
-@media (max-width:480px){.footer-grid{grid-template-columns:1fr;}}
-footer h4{color:#fff;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
-footer ul{display:flex;flex-direction:column;gap:10px;font-size:0.9rem;}
-footer a{color:#D0D4C5;}
-footer a:hover{color:#fff;}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:0.82rem;color:#A9B09A;}
+footer.site-footer{background:var(--sage-deep);color:#EFEEE6;padding:76px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,0.14);}
+@media (max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+.footer-grid h4{color:#fff;font-family:var(--font-body);font-size:0.86rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:18px;font-weight:700;}
+.footer-grid ul{display:flex;flex-direction:column;gap:11px;}
+.footer-grid a{color:#D8DBCE;font-size:0.92rem;transition:color .25s;}
+.footer-grid a:hover{color:#fff;}
+.footer-brand p{color:#D8DBCE;font-size:0.92rem;margin-top:14px;max-width:280px;}
+.social-row{display:flex;gap:10px;margin-top:20px;}
+.social-row a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;}
+.social-row a:hover{background:var(--clay);transform:translateY(-3px);}
+.social-row svg{width:17px;height:17px;color:#fff;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;flex-wrap:wrap;gap:10px;color:#B9BEAA;font-size:0.82rem;}
+.newsletter-form{display:flex;gap:10px;margin-top:6px;max-width:360px;flex-wrap:wrap;}
+.newsletter-form input{flex:1;min-width:180px;padding:12px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.08);color:#fff;}
+.newsletter-form input::placeholder{color:#C7CBB9;}
+.newsletter-form input:focus{outline:none;border-color:#fff;}
+.newsletter-form button{border-radius:999px;padding:12px 22px;}
 
-/* FAB */
-.back-top{
-  position:fixed;bottom:24px;right:24px;width:42px;height:42px;border-radius:50%;
-  background:var(--sage-deep);color:#fff;border:none;display:flex;align-items:center;
-  justify-content:center;box-shadow:var(--shadow-card);cursor:pointer;opacity:0.8;transition:opacity .2s;
+/* ============================= WHATSAPP FAB ============================= */
+.fab-wrap{position:fixed;bottom:26px;right:26px;z-index:600;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.fab{
+  width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 16px 30px -10px rgba(37,211,102,0.6);transition:transform .3s;position:relative;
 }
-.back-top:hover{opacity:1;}
+.fab:hover{transform:scale(1.08);}
+.fab svg{width:29px;height:29px;color:#fff;}
+.fab::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:pulse 2.2s ease-out infinite;}
+@keyframes pulse{0%{transform:scale(1);opacity:0.7;}100%{transform:scale(1.6);opacity:0;}}
+.back-top{width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid var(--line);box-shadow:var(--shadow-card);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s,transform .3s;}
+.back-top.show{opacity:1;visibility:visible;}
+.back-top:hover{transform:translateY(-3px);}
+.back-top svg{width:18px;height:18px;}
+
+/* ============================= PAGE HERO (inner pages) ============================= */
+.page-hero{padding:64px 0 56px;background:var(--cream);position:relative;overflow:hidden;text-align:center;}
+.page-hero h1{font-size:clamp(2.1rem,4vw,2.9rem);margin-top:14px;}
+.page-hero p{max-width:600px;margin:16px auto 0;color:var(--ink-soft);font-size:1.05rem;}
+.breadcrumb{display:flex;gap:8px;justify-content:center;font-size:0.82rem;color:var(--ink-faint);margin-top:2px;}
+.breadcrumb a{color:var(--sage-deep);font-weight:600;}
+
+/* generic two-col content */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+@media (max-width:900px){.split{grid-template-columns:1fr;}}
+.image-panel{border-radius:var(--radius-lg);aspect-ratio:4/4.6;background:linear-gradient(150deg,var(--sage-light),var(--sage-deep));position:relative;overflow:hidden;box-shadow:var(--shadow-soft);}
+.image-panel.clay{background:linear-gradient(150deg,#E3B98F,var(--clay-deep));}
+.image-panel.sand{background:linear-gradient(150deg,var(--sand),#C9B892);}
+.image-panel svg{position:absolute;inset:0;width:100%;height:100%;}
+
+.stat-strip{display:flex;gap:36px;flex-wrap:wrap;margin-top:30px;padding-top:30px;border-top:1px solid var(--line);}
+.stat-strip div strong{display:block;font-family:var(--font-display);font-size:1.7rem;color:var(--sage-deep);}
+.stat-strip div span{font-size:0.8rem;color:var(--ink-faint);}
+
+.credential-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+.credential-row span{background:var(--sage-pale);color:var(--sage-deep);padding:9px 16px;border-radius:999px;font-size:0.82rem;font-weight:600;}
+
+.timeline{border-left:2px solid var(--line);padding-left:30px;display:flex;flex-direction:column;gap:34px;margin-top:10px;}
+.timeline .t-item{position:relative;}
+.timeline .t-item::before{content:'';position:absolute;left:-37px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--clay);border:3px solid var(--white);box-shadow:0 0 0 2px var(--clay);}
+.timeline .t-item strong{display:block;font-size:0.98rem;}
+.timeline .t-item span.yr{font-size:0.78rem;color:var(--ink-faint);text-transform:uppercase;letter-spacing:0.06em;}
+.timeline .t-item p{margin-top:6px;color:var(--ink-soft);font-size:0.9rem;}
+
+/* page navigation - hidden pages */
+.page{display:none;}
+.page.active{display:block;}
+
+/* map */
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);border:1px solid var(--line);}
+.map-wrap iframe{width:100%;height:400px;border:0;display:block;filter:saturate(0.85) contrast(1.02);}
+
+/* program page condition list */
+.check-list{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.check-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.96rem;color:var(--ink-soft);}
+.check-list li svg{width:20px;height:20px;color:var(--sage-deep);flex:none;margin-top:2px;}
+
+.tag-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+.tag-row span{background:var(--cream);border:1px solid var(--line);padding:7px 15px;border-radius:999px;font-size:0.8rem;color:var(--ink-soft);font-weight:500;}
+
+.quote-block{border-left:3px solid var(--clay);padding-left:24px;margin:26px 0;}
+.quote-block p{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--ink);}
+.quote-block span{display:block;margin-top:10px;font-size:0.84rem;color:var(--ink-faint);font-family:var(--font-body);font-style:normal;}
+
+.filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.filter-chip{padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:0.86rem;font-weight:600;color:var(--ink-soft);transition:all .25s;}
+.filter-chip.active,.filter-chip:hover{background:var(--sage-deep);border-color:var(--sage-deep);color:#fff;}
+
+.mealplan-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+.day-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:22px;}
+.day-card h4{font-size:0.95rem;color:var(--sage-deep);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;}
+.day-card ul{display:flex;flex-direction:column;gap:10px;}
+.day-card li{font-size:0.88rem;color:var(--ink-soft);padding-bottom:10px;border-bottom:1px dashed var(--line);}
+.day-card li:last-child{border-bottom:none;padding-bottom:0;}
+.day-card li b{display:block;color:var(--ink);font-weight:600;font-size:0.9rem;}
+
+.avatar-row{display:flex;margin-top:6px;}
+.avatar-row span{width:34px;height:34px;border-radius:50%;border:2px solid #fff;margin-left:-10px;background:linear-gradient(135deg,var(--sage-light),var(--sage-deep));}
+.avatar-row span:first-child{margin-left:0;}
+
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(30px);background:var(--ink);color:#fff;padding:15px 26px;border-radius:999px;font-size:0.9rem;font-weight:600;box-shadow:var(--shadow-soft);opacity:0;visibility:hidden;transition:all .4s;z-index:9999;display:flex;align-items:center;gap:10px;}
+.toast.show{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.toast svg{width:18px;height:18px;color:var(--sage-light);}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- HEADER -->
-<header class="site-header">
+<!-- ============================= HEADER ============================= -->
+<header class="site-header" id="siteHeader">
   <div class="nav-wrap">
-    <a href="#" class="brand" onclick="showPage('home'); return false;">
-      <span class="mark">D</span> DietCare<em>.pk</em>
+    <a href="#" class="brand" data-nav="home" aria-label="Bloomfield Nutrition home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="#77886A"/>
+        <path d="M20 30C20 30 11 25.5 11 18.5C11 14 14.5 11 18 11C19.3 11 20 12 20 12C20 12 20.7 11 22 11C25.5 11 29 14 29 18.5C29 25.5 20 30 20 30Z" fill="#F6F1E7"/>
+        <path d="M20 12V25" stroke="#77886A" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <span class="name">Bloomfield <em>Nutrition</em><small>Amara Reyes, RD</small></span>
     </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
-    <nav class="main-nav" id="mainNav">
-      <button class="nav-link active" onclick="showPage('home')">Home</button>
-      <button class="nav-link" onclick="showPage('programs')">Programs</button>
-      <button class="nav-link" onclick="showPage('calc')">Calculators</button>
-      <button class="nav-link" onclick="showPage('about')">About</button>
-      <button class="nav-link" onclick="showPage('contact')">Book Consultation</button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="#" class="nav-link" data-nav="home">Home</a></li>
+        <li><a href="#" class="nav-link" data-nav="about">About</a></li>
+        <li><a href="#" class="nav-link" data-nav="services">Services</a></li>
+        <li class="has-dropdown">
+          <button class="nav-link" aria-haspopup="true" aria-expanded="false">Programs</button>
+          <div class="dropdown">
+            <a href="#" data-nav="weight-loss">Weight Loss Programs</a>
+            <a href="#" data-nav="pcos">PCOS Nutrition</a>
+            <a href="#" data-nav="diabetes">Diabetes Management</a>
+            <a href="#" data-nav="pregnancy">Pregnancy &amp; Postpartum</a>
+            <a href="#" data-nav="child">Child Nutrition</a>
+          </div>
+        </li>
+        <li><a href="#" class="nav-link" data-nav="meal-plans">Meal Plans</a></li>
+        <li><a href="#" class="nav-link" data-nav="tools">Calculators</a></li>
+        <li><a href="#" class="nav-link" data-nav="testimonials">Testimonials</a></li>
+        <li><a href="#" class="nav-link" data-nav="blog">Blog</a></li>
+        <li><a href="#" class="nav-link" data-nav="faq">FAQ</a></li>
+        <li><a href="#" class="nav-link" data-nav="contact">Contact</a></li>
+        <li class="mobile-only"><a href="#" class="nav-link" data-nav="book">Book an Appointment</a></li>
+      </ul>
     </nav>
+
+    <div class="nav-actions">
+      <a href="#" class="btn btn-primary btn-sm" data-nav="book">Book Consultation</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+        <svg class="icon" id="menuIcon" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
   </div>
 </header>
+<div class="nav-scrim" id="navScrim"></div>
 
-<!-- ============================= PAGE 1: HOME ============================= -->
-<main id="home" class="page active">
+<main id="main">
+
+<!-- ============================= HOME ============================= -->
+<div class="page active" id="page-home">
+
   <section class="hero">
     <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Desi-Friendly Science-Backed Dietetics</span>
-        <h1>Nourish Your Body Without Giving Up <em>Desi Khana.</em></h1>
-        <p class="lead">Personalised nutrition care for sustainable weight loss, PCOS management, and diabetes control. No crash diets or unnatural restrictions.</p>
+      <div class="hero-copy reveal">
+        <span class="eyebrow">Registered Dietitian &middot; Nutrition Consultant</span>
+        <h1>Nourishment, <em>designed</em><br>around your real life.</h1>
+        <p class="lead">Bloomfield Nutrition pairs clinical expertise with a calm, personal approach — helping you build a sustainable relationship with food through evidence-based, judgment-free care.</p>
         <div class="hero-cta">
-          <button class="btn btn-primary" onclick="showPage('contact')">Book Consultation</button>
-          <button class="btn btn-outline" onclick="showPage('calc')">Calculate Caloric Needs</button>
+          <a href="#" class="btn btn-primary" data-nav="book">
+            Book Consultation
+            <svg class="icon" viewBox="0 0 24 24" style="width:17px;height:17px"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" class="btn btn-outline" data-nav="services">Explore Services</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12+</strong><span>Years in Practice</span></div>
+          <div><strong>2,400+</strong><span>Clients Guided</span></div>
+          <div><strong>4.9/5</strong><span>Average Rating</span></div>
         </div>
       </div>
-      <div class="hero-card">
-        <span class="badge-pill">Clinical Focus</span>
-        <h3>Why DietCare?</h3>
-        <p>We tailor healthy meal plans around traditional Pakistani food habits—enjoying home-cooked roti, rice, and salan while achieving real, lasting results.</p>
-        <hr style="border:none; border-top:1px solid var(--line); margin:20px 0;">
-        <div style="display:flex; gap:20px;">
-          <div><strong>100%</strong><br><small style="color:var(--ink-faint)">Personalised Plans</small></div>
-          <div><strong>0%</strong><br><small style="color:var(--ink-faint)">Starvation Diets</small></div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Our Core Specialties</span>
-        <h2>Personalised Diet Care That Fits Your Lifestyle</h2>
-        <p>We combine evidence-based clinical dietetics with practical everyday Pakistani meals.</p>
-      </div>
-      <div class="grid-3">
-        <div class="card">
-          <div class="card-icon">🥗</div>
-          <h3>Sustainable Weight Loss</h3>
-          <p>Lose fat safely while retaining energy and muscle mass. Tailored calories using local, home-cooked foods.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🌸</div>
-          <h3>PCOS & Hormonal Care</h3>
-          <p>Target insulin resistance, manage irregular cycles, reduce cravings, and clear acne through balanced meals.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🩸</div>
-          <h3>Diabetes & HbA1c Control</h3>
-          <p>Master glycemic index management with portion control techniques for rice, roti, and daily carbohydrates.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MEAL PREVIEW SECTION -->
-  <section class="section" style="background:var(--cream)">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Sample Menu Concepts</span>
-        <h2>Real Food, Balanced For You</h2>
-        <p>See how traditional Pakistani cuisine is structured in our diet programs.</p>
-      </div>
-
-      <div class="tab-row">
-        <button class="tab-btn active" onclick="showMealTab('pcos')">PCOS Care</button>
-        <button class="tab-btn" onclick="showMealTab('weight')">Weight Loss</button>
-        <button class="tab-btn" onclick="showMealTab('diabetic')">Diabetic Friendly</button>
-      </div>
-
-      <div id="pcos-meal" class="meal-box">
-        <h3>🌸 Sample PCOS Friendly Day</h3>
-        <p style="color:var(--ink-soft); margin-top:8px;">Focus: High protein, low glycemic index, anti-inflammatory whole foods.</p>
-        <ul style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
-          <li><strong>Breakfast:</strong> 2 Boiled Eggs + 1 Multigrain Roti or Oats porridge with seeds.</li>
-          <li><strong>Lunch:</strong> Daal / Chicken Chana Salan + Bran Roti + Fresh Salad bowl.</li>
-          <li><strong>Snack:</strong> Green Tea + Handful of roasted almonds/walnuts.</li>
-          <li><strong>Dinner:</strong> Grilled Fish or Chicken Tikka + Steamed Sabzi (Vegetables).</li>
-        </ul>
-      </div>
-
-      <div id="weight-meal" class="meal-box" style="display:none;">
-        <h3>🥗 Sample Calorie-Deficit Day</h3>
-        <p style="color:var(--ink-soft); margin-top:8px;">Focus: High volume, high satiety to keep you full longer.</p>
-        <ul style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
-          <li><strong>Breakfast:</strong> Vegetable Omelette + 1 Slice Whole Wheat Toast + Black Tea/Coffee.</li>
-          <li><strong>Lunch:</strong> 1 Small Portion Brown/Basmati Rice + Mix Sabzi Salan + Cucumber Raita.</li>
-          <li><strong>Snack:</strong> Seasonal Fruit (Apple/Guava) or 1 Cup Chana Chaat.</li>
-          <li><strong>Dinner:</strong> 1 Small Bran Roti + Bhindi/Palak Salan + Chicken Breasts.</li>
-        </ul>
-      </div>
-
-      <div id="diabetic-meal" class="meal-box" style="display:none;">
-        <h3>🩸 Sample Glycemic-Control Day</h3>
-        <p style="color:var(--ink-soft); margin-top:8px;">Focus: Fiber-rich carbohydrate pairing to prevent glucose spikes.</p>
-        <ul style="margin-top:16px; display:flex; flex-direction:column; gap:8px;">
-          <li><strong>Breakfast:</strong> Whole Wheat Roti + Egg Bhurji + Sugar-free Cardamom Tea.</li>
-          <li><strong>Lunch:</strong> Lentil Soup (Daal) + Barley/Whole Grain Roti + Kachumbar Salad.</li>
-          <li><strong>Snack:</strong> Roasted Chickpeas (Bhuna Chana) + Cinnamon Green Tea.</li>
-          <li><strong>Dinner:</strong> Grilled Kebabs + Fresh Salad + Apple Cider Vinegar Shot before food.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section class="section">
-    <div class="container" style="max-width:800px;">
-      <div class="section-head center">
-        <span class="eyebrow">Frequently Asked Questions</span>
-        <h2>Common Diet Concerns</h2>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Will I have to completely stop eating Roti and Rice? <span>+</span></button>
-        <div class="faq-a">No! Roti and rice are staple carbs. We focus on portion control, carbohydrate quality (such as bran or brown rice options), and proper protein/fiber pairings so you lose weight while still enjoying local food.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How are consultations conducted? <span>+</span></button>
-        <div class="faq-a">We offer both flexible Online Consultations (via WhatsApp/Zoom for nationwide and international clients) and In-Clinic visits by appointment.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">Can DietCare help with PCOS hair loss and irregular periods? <span>+</span></button>
-        <div class="faq-a">Yes! PCOS symptoms are deeply connected to insulin resistance. Managing blood sugar levels through targeted food pairings drastically improves hormonal balance and cycle regularity.</div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ============================= PAGE 2: PROGRAMS ============================= -->
-<main id="programs" class="page">
-  <section class="section">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Tailored Plans</span>
-        <h2>Diet & Wellness Consultation Packages</h2>
-        <p>Comprehensive, science-backed nutritional care built around your routine.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card">
-          <span class="badge-pill">4 Weeks</span>
-          <h3>Starter Care</h3>
-          <p style="font-size:1.8rem; font-weight:700; color:var(--sage-deep); margin:12px 0;">Rs. 5,500</p>
-          <ul style="display:flex; flex-direction:column; gap:8px; font-size:0.9rem; margin-bottom:20px;">
-            <li>✓ Detailed Initial Assessment</li>
-            <li>✓ 1 Personalised Diet Chart</li>
-            <li>✓ 2 Check-ins & Progress Reviews</li>
-            <li>✓ WhatsApp Q&A Support</li>
-          </ul>
-          <button class="btn btn-outline btn-sm" style="width:100%" onclick="showPage('contact')">Select Plan</button>
-        </div>
-
-        <div class="card" style="border-color:var(--sage-deep);">
-          <span class="badge-pill" style="background:var(--clay); color:#fff;">Most Popular</span>
-          <h3>Transform Care (8 Weeks)</h3>
-          <p style="font-size:1.8rem; font-weight:700; color:var(--sage-deep); margin:12px 0;">Rs. 9,500</p>
-          <ul style="display:flex; flex-direction:column; gap:8px; font-size:0.9rem; margin-bottom:20px;">
-            <li>✓ Complete Body Composition Analysis</li>
-            <li>✓ 2 Customized Meal Plans</li>
-            <li>✓ Weekly Progress Check-ins</li>
-            <li>✓ PCOS / Metabolic Protocol</li>
-            <li>✓ Priority WhatsApp Support</li>
-          </ul>
-          <button class="btn btn-primary btn-sm" style="width:100%" onclick="showPage('contact')">Select Plan</button>
-        </div>
-
-        <div class="card">
-          <span class="badge-pill">12 Weeks</span>
-          <h3>Lifestyle Medical Care</h3>
-          <p style="font-size:1.8rem; font-weight:700; color:var(--sage-deep); margin:12px 0;">Rs. 13,500</p>
-          <ul style="display:flex; flex-direction:column; gap:8px; font-size:0.9rem; margin-bottom:20px;">
-            <li>✓ Medical Nutrition Therapy (Diabetes/PCOS/Thyroid)</li>
-            <li>✓ 3 Revised Meal Plans</li>
-            <li>✓ Weekly Follow-ups & Recipe Guides</li>
-            <li>✓ Long-term Maintenance Strategy</li>
-          </ul>
-          <button class="btn btn-outline btn-sm" style="width:100%" onclick="showPage('contact')">Select Plan</button>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- ============================= PAGE 3: CALCULATORS ============================= -->
-<main id="calc" class="page">
-  <section class="section">
-    <div class="container">
-      <div class="section-head center">
-        <span class="eyebrow">Free Health Tools</span>
-        <h2>BMI & Daily Calorie Calculator</h2>
-        <p>Get a instant estimate of your body mass index and estimated daily energy expenditure.</p>
-      </div>
-
-      <div class="calc-box">
-        <form id="healthCalc" onsubmit="calculateHealth(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Gender</label>
-              <select id="calcGender">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>Age (years)</label>
-              <input type="number" id="calcAge" required placeholder="25" min="15" max="90">
-            </div>
+      <div class="hero-visual reveal">
+        <svg class="leaf-decor" style="top:-10px;right:20px;width:90px;height:90px" viewBox="0 0 100 100"><path d="M50 5C70 20 90 40 85 65C80 90 55 95 40 80C25 65 30 40 50 5Z" fill="currentColor" opacity="0.5"/></svg>
+        <div class="blob-frame">
+          <div class="blob-shape">
+            <svg viewBox="0 0 400 430" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <linearGradient id="portraitGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#A9B79A"/><stop offset="1" stop-color="#465239"/>
+                </linearGradient>
+              </defs>
+              <rect width="400" height="430" fill="url(#portraitGrad)"/>
+              <circle cx="200" cy="165" r="72" fill="#F6F1E7" opacity="0.92"/>
+              <path d="M110 420C110 320 145 275 200 275C255 275 290 320 290 420Z" fill="#F6F1E7" opacity="0.92"/>
+              <circle cx="200" cy="165" r="72" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
+              <g opacity="0.55" stroke="#F6F1E7" stroke-width="1.4" fill="none">
+                <path d="M40 60 Q60 40 90 55"/><path d="M330 90 Q360 75 380 95"/><path d="M50 360 Q30 340 45 310"/>
+              </g>
+            </svg>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>Weight (kg)</label>
-              <input type="number" id="calcWeight" step="0.1" required placeholder="68">
-            </div>
-            <div class="form-group">
-              <label>Height (cm)</label>
-              <input type="number" id="calcHeight" step="0.1" required placeholder="163">
-            </div>
+          <div class="floating-card card-a">
+            <div class="ic clay"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4.97-3.6-9-7.02-9-11.2C3 6.6 5.6 4 8.6 4 10.4 4 11.4 5 12 5.9 12.6 5 13.6 4 15.4 4 18.4 4 21 6.6 21 9.8 21 14 17 17.4 12 21Z"/></svg></div>
+            <div><strong>98% Satisfaction</strong><span>Client outcomes survey</span></div>
           </div>
-
-          <div class="form-group" style="margin-bottom:20px;">
-            <label>Activity Level</label>
-            <select id="calcActivity">
-              <option value="1.2">Sedentary (Little or no exercise)</option>
-              <option value="1.375">Lightly Active (Exercise 1-3 days/week)</option>
-              <option value="1.55">Moderately Active (Exercise 3-5 days/week)</option>
-              <option value="1.725">Very Active (Hard exercise 6-7 days/week)</option>
-            </select>
+          <div class="floating-card card-b">
+            <div class="ic"><svg class="icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <div><strong>Personalized Plans</strong><span>Not one-size-fits-all</span></div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <button type="submit" class="btn btn-primary" style="width:100%;">Calculate Results</button>
+  <div class="trust-strip">
+    <div class="container">
+      <span class="label">Trusted &amp; Recognized By</span>
+      <div class="badges">
+        <div><svg class="icon" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z"/></svg> Academy of Nutrition &amp; Dietetics</div>
+        <div><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M9 14 6 22l6-3 6 3-3-8"/></svg> Board Certified, RD/LDN</div>
+        <div><svg class="icon" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg> Telehealth Nationwide</div>
+        <div><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg> Insurance-Friendly Superbills</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES OVERVIEW -->
+  <section class="section" id="home-services">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">What We Offer</span>
+        <h2>Care built around every stage of life</h2>
+        <p>From first consultation to long-term maintenance, every program is rooted in science and shaped around your goals, culture, and schedule.</p>
+      </div>
+      <div class="grid-3 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 3v3M5 8l2 2M19 8l-2 2M3 15h4M17 15h4M12 12a5 5 0 0 0-5 5v1h10v-1a5 5 0 0 0-5-5Z"/></svg></div>
+          <h3>Weight Loss Programs</h3><p>Sustainable, metabolism-aware plans that never rely on deprivation.</p>
+          <a href="#" class="card-link" data-nav="weight-loss">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>PCOS Nutrition</h3><p>Hormone-conscious meal strategies to ease symptoms and restore balance.</p>
+          <a href="#" class="card-link" data-nav="pcos">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M20 4 12 12"/></svg></div>
+          <h3>Diabetes Management</h3><p>Blood-sugar-friendly eating plans built with your physician in the loop.</p>
+          <a href="#" class="card-link" data-nav="diabetes">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/><path d="M9 4.5c1-1.5 5-1.5 6 0"/></svg></div>
+          <h3>Pregnancy &amp; Postpartum</h3><p>Nourishing you and baby through every trimester and beyond.</p>
+          <a href="#" class="card-link" data-nav="pregnancy">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21c0-4 3-6 6-6s6 2 6 6"/></svg></div>
+          <h3>Child Nutrition</h3><p>Positive, pressure-free food habits for growing kids and picky eaters.</p>
+          <a href="#" class="card-link" data-nav="child">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/><path d="M8 7h7M8 11h7"/></svg></div>
+          <h3>Custom Meal Plans</h3><p>Weekly plans with grocery lists tailored to your taste and routine.</p>
+          <a href="#" class="card-link" data-nav="meal-plans">Learn more <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section class="section band-cream">
+    <div class="container split">
+      <div class="reveal">
+        <span class="eyebrow">Why Choose Bloomfield</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.9rem,3.2vw,2.5rem)">Clinical rigor. Genuine warmth.</h2>
+        <p style="margin-top:14px;color:var(--ink-soft)">We combine the precision of clinical nutrition science with an unrushed, human approach — because lasting change happens in relationship, not in restriction.</p>
+        <div class="why-list">
+          <div class="why-item"><span class="num">01</span><div><h4>Evidence-Based</h4><p>Every plan is grounded in current nutrition research, not fads.</p></div></div>
+          <div class="why-item"><span class="num">02</span><div><h4>Fully Personalized</h4><p>Labs, lifestyle, culture, and preferences shape your plan.</p></div></div>
+          <div class="why-item"><span class="num">03</span><div><h4>Ongoing Support</h4><p>Real accountability between sessions via messaging &amp; check-ins.</p></div></div>
+          <div class="why-item"><span class="num">04</span><div><h4>Whole-Person Care</h4><p>We consider sleep, stress, and movement — not just the plate.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="image-panel">
+          <svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="460" fill="none"/>
+            <circle cx="200" cy="150" r="120" fill="#fff" opacity="0.12"/>
+            <path d="M60 460C60 320 120 250 200 250C280 250 340 320 340 460Z" fill="#fff" opacity="0.16"/>
+            <g stroke="#fff" stroke-width="1.4" opacity="0.5" fill="none"><path d="M40 70 Q70 40 110 60"/><path d="M330 400 Q360 380 350 350"/></g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT SUCCESS STORIES -->
+  <section class="section" id="home-testimonials">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">Client Success Stories</span>
+        <h2>Real people, real results</h2>
+      </div>
+      <div class="testi-wrap reveal">
+        <div class="testi-slide active" data-slide="0">
+          <div class="testi-stars">★★★★★</div>
+          <q>Amara helped me finally understand my body instead of fighting it. Two years later, the habits still stick.</q>
+          <div class="testi-person"><span class="testi-avatar"></span><div style="text-align:left"><strong>Priya M.</strong><span>PCOS Program, 14 months</span></div></div>
+        </div>
+        <div class="testi-slide" data-slide="1">
+          <div class="testi-stars">★★★★★</div>
+          <q>The postpartum plan was the first time a professional actually asked what my life looked like before prescribing anything.</q>
+          <div class="testi-person"><span class="testi-avatar"></span><div style="text-align:left"><strong>Daniela R.</strong><span>Postpartum Nutrition</span></div></div>
+        </div>
+        <div class="testi-slide" data-slide="2">
+          <div class="testi-stars">★★★★★</div>
+          <q>My A1C dropped a full point in four months without ever feeling like I was on a "diet." Genuinely grateful.</q>
+          <div class="testi-person"><span class="testi-avatar"></span><div style="text-align:left"><strong>James O.</strong><span>Diabetes Management</span></div></div>
+        </div>
+        <div class="testi-nav">
+          <button class="testi-arrow" id="testiPrev" aria-label="Previous testimonial"><svg class="icon" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="testi-dot active" data-dot="0" aria-label="Testimonial 1"></button>
+          <button class="testi-dot" data-dot="1" aria-label="Testimonial 2"></button>
+          <button class="testi-dot" data-dot="2" aria-label="Testimonial 3"></button>
+          <button class="testi-arrow" id="testiNext" aria-label="Next testimonial"><svg class="icon" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE / AFTER -->
+  <section class="section band-sand">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">Transformations</span>
+        <h2>Progress, one sustainable habit at a time</h2>
+        <p>Drag the slider to see the kind of steady, health-first change our clients experience — not overnight fixes, but lasting shifts.</p>
+      </div>
+      <div class="reveal" style="max-width:760px;margin:0 auto;">
+        <div class="transform-slider" id="baSlider">
+          <div class="ba-img ba-before"></div>
+          <div class="ba-img ba-after" id="baAfter"></div>
+          <div class="handle" id="baHandle"></div>
+          <span class="ba-label before">Month 0</span>
+          <span class="ba-label after">Month 6</span>
+          <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Compare before and after">
+        </div>
+        <p class="ba-caption">Illustrative representation — individual results vary and are discussed candidly during consultation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">How It Works</span>
+        <h2>A simple, guided path to results</h2>
+      </div>
+      <div class="process-track reveal-stagger">
+        <div class="process-step"><div class="process-num">01</div><h4>Consultation</h4><p>An in-depth conversation about your history, goals, labs, and lifestyle.</p></div>
+        <div class="process-step"><div class="process-num">02</div><h4>Personalized Plan</h4><p>A nutrition roadmap built around your body, preferences, and schedule.</p></div>
+        <div class="process-step"><div class="process-num">03</div><h4>Follow-Ups</h4><p>Regular check-ins to adjust the plan as your body and life change.</p></div>
+        <div class="process-step"><div class="process-num">04</div><h4>Results</h4><p>Lasting habits, measurable progress, and a healthier relationship with food.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:48px">
+        <a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="band section-tight">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:26px">
+      <div class="reveal">
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem)">Ready to feel at home in your body again?</h2>
+        <p style="color:#D8DBCE;margin-top:10px;max-width:480px">Your first consultation includes a full intake, goal-setting, and a clear next-steps plan.</p>
+      </div>
+      <div class="reveal" style="display:flex;gap:14px;flex-wrap:wrap">
+        <a href="#" class="btn btn-clay" data-nav="book">Book Consultation</a>
+        <a href="#" class="btn btn-ghost" data-nav="contact">Ask a Question</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<!-- ============================= END HOME ============================= -->
+
+<!-- ============================= ABOUT ============================= -->
+<div class="page" id="page-about">
+  <section class="page-hero">
+    <div class="container">
+      <span class="breadcrumb"><a href="#" data-nav="home">Home</a> / About</span>
+      <h1>Meet Amara Reyes, RD, LDN</h1>
+      <p>Registered Dietitian &amp; founder of Bloomfield Nutrition — dedicated to compassionate, evidence-based care.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container split">
+      <div class="reveal">
+        <div class="image-panel">
+          <svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMid slice">
+            <circle cx="200" cy="170" r="82" fill="#fff" opacity="0.9"/>
+            <path d="M95 460C95 340 135 290 200 290C265 290 305 340 305 460Z" fill="#fff" opacity="0.9"/>
+          </svg>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">The Dietitian</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Food as medicine, care as philosophy</h2>
+        <p style="margin-top:16px;color:var(--ink-soft)">Amara has spent over a decade helping clients navigate weight management, hormonal health, chronic disease, and family nutrition with warmth and scientific precision. She believes food guilt has no place in healing, and that the most effective plan is the one you can actually live with.</p>
+        <div class="credential-row">
+          <span>M.S. Clinical Nutrition</span><span>Registered Dietitian (RD)</span><span>Licensed, LDN</span><span>Certified Diabetes Educator</span>
+        </div>
+        <div class="stat-strip">
+          <div><strong>12+</strong><span>Years Practicing</span></div>
+          <div><strong>2,400+</strong><span>Clients Served</span></div>
+          <div><strong>15</strong><span>Published Articles</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-cream">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">Journey</span>
+        <h2>Education &amp; Experience</h2>
+      </div>
+      <div class="timeline reveal-stagger" style="max-width:680px;margin:0 auto;">
+        <div class="t-item"><span class="yr">2012</span><strong>M.S. in Clinical Nutrition</strong><p>Graduated with distinction, focusing on metabolic and endocrine disorders.</p></div>
+        <div class="t-item"><span class="yr">2013</span><strong>Registered Dietitian Credential</strong><p>Completed supervised practice across hospital, outpatient, and community settings.</p></div>
+        <div class="t-item"><span class="yr">2016</span><strong>Certified Diabetes Care &amp; Education Specialist</strong><p>Specialized training in insulin-sensitive meal planning and CGM interpretation.</p></div>
+        <div class="t-item"><span class="yr">2019</span><strong>Founded Bloomfield Nutrition</strong><p>Opened a private practice centered on personalized, non-diet-culture care.</p></div>
+        <div class="t-item"><span class="yr">2023</span><strong>Women's Hormonal Health Fellowship</strong><p>Advanced study in PCOS, perimenopause, and reproductive nutrition.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow" style="justify-content:center">Philosophy</span>
+        <h2>Three principles that guide every plan</h2>
+      </div>
+      <div class="grid-3 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4.97-3.6-9-7.02-9-11.2C3 6.6 5.6 4 8.6 4 10.4 4 11.4 5 12 5.9 12.6 5 13.6 4 15.4 4 18.4 4 21 6.6 21 9.8 21 14 17 17.4 12 21Z"/></svg></div><h3>No Food Guilt</h3><p>Every food fits. We build flexible frameworks, not forbidden lists.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Evidence Over Trends</h3><p>Recommendations are grounded in peer-reviewed research, always current.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>You're the Expert on You</h3><p>Plans are co-created, respecting your culture, budget, and preferences.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="band section-tight"><div class="container" style="text-align:center"><h2>Curious if we're the right fit?</h2><p style="color:#D8DBCE;margin-top:10px">A free 15-minute discovery call is the easiest way to find out.</p><div style="margin-top:24px"><a href="#" class="btn btn-clay" data-nav="book">Book a Free Discovery Call</a></div></div></section>
+</div>
+
+<!-- ============================= SERVICES ============================= -->
+<div class="page" id="page-services">
+  <section class="page-hero">
+    <div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Services</span>
+      <h1>Nutrition Services</h1>
+      <p>Comprehensive, personalized care — delivered in-person or via secure telehealth, wherever you are.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="grid-3 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/><path d="M8 7h7M8 11h7"/></svg></div><h3>Initial Nutrition Assessment</h3><p>A comprehensive 60-minute intake reviewing history, labs, habits, and goals.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>1:1 Ongoing Coaching</h3><p>Biweekly or monthly sessions for accountability, adjustment, and support.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M20 4 12 12"/></svg></div><h3>Medical Nutrition Therapy</h3><p>Clinical management for diabetes, PCOS, GI conditions, and cardiovascular health.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/></svg></div><h3>Custom Meal Planning</h3><p>Weekly menus with recipes and grocery lists tailored to your household.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a6 6 0 0 1 12 0v2"/></svg></div><h3>Family &amp; Child Nutrition</h3><p>Building positive food relationships for kids, from toddlers to teens.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Corporate Wellness Talks</h3><p>Nutrition workshops and lunch-and-learns for teams and organizations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-cream">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Investment</span><h2>Simple, transparent pricing</h2><p>Superbills provided for out-of-network insurance reimbursement.</p></div>
+      <div class="pricing-grid reveal-stagger">
+        <div class="price-card"><h3>Single Session</h3><div class="price">$150<span>/session</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>60-minute 1:1 consultation</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Personalized recommendations</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Written summary &amp; superbill</li></ul>
+          <a href="#" class="btn btn-outline" data-nav="book">Book This</a></div>
+        <div class="price-card featured"><span class="tag">Most Popular</span><h3>3-Month Program</h3><div class="price">$720<span>/program</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Initial assessment + 6 sessions</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Custom meal plans included</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Unlimited messaging support</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Lab review &amp; progress tracking</li></ul>
+          <a href="#" class="btn btn-primary" data-nav="book">Book This</a></div>
+        <div class="price-card"><h3>6-Month Transformation</h3><div class="price">$1,320<span>/program</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Everything in 3-Month, doubled</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Quarterly lab panel review</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Priority scheduling</li></ul>
+          <a href="#" class="btn btn-outline" data-nav="book">Book This</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= PROGRAM PAGE TEMPLATE (reused structure) ============================= -->
+<!-- WEIGHT LOSS -->
+<div class="page" id="page-weight-loss">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / <a href="#" data-nav="services">Services</a> / Weight Loss</span>
+    <h1>Weight Loss Programs</h1><p>Sustainable fat loss built on metabolism, habits, and self-trust — never crash diets.</p></div></section>
+  <section class="section">
+    <div class="container split">
+      <div class="reveal"><span class="eyebrow">The Approach</span><h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Weight loss that respects your biology</h2>
+        <p style="margin-top:16px;color:var(--ink-soft)">We look beyond calories: sleep, stress, hormones, and history all shape your metabolism. Your plan is built to fit your life, not the other way around.</p>
+        <ul class="check-list">
+          <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Individualized calorie &amp; macro targets based on metabolic testing</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Behavior-change coaching for long-term habit formation</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Strength-training &amp; movement guidance alongside nutrition</li>
+          <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Optional GLP-1 medication nutrition support</li>
+        </ul>
+        <div class="hero-cta"><a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a></div>
+      </div>
+      <div class="reveal"><div class="image-panel"><svg viewBox="0 0 400 460"><circle cx="200" cy="180" r="130" fill="#fff" opacity="0.14"/></svg></div></div>
+    </div>
+  </section>
+  <section class="section band-cream"><div class="container">
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Program Includes</span><h2>What's inside your weight loss plan</h2></div>
+    <div class="grid-4 reveal-stagger">
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/></svg></div><h3>Custom Meal Plan</h3><p>Weekly menus matched to your calorie &amp; macro goals.</p></div>
+      <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/></svg></div><h3>Biweekly Check-Ins</h3><p>Progress reviews and plan adjustments as you go.</p></div>
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h3>Progress Tracking</h3><p>Body composition, energy, and habit metrics — not just the scale.</p></div>
+      <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Unlimited Messaging</h3><p>Ask questions between sessions and stay accountable.</p></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="container"><div class="quote-block reveal"><p>"I lost 34 pounds without ever feeling like I was dieting — the plan just fit into my life."</p><span>— Weight Loss Program client, 8 months</span></div>
+  <div style="text-align:center;margin-top:20px"><a href="#" class="btn btn-primary" data-nav="book">Start Your Program</a></div></div></section>
+</div>
+
+<!-- PCOS -->
+<div class="page" id="page-pcos">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / <a href="#" data-nav="services">Services</a> / PCOS Nutrition</span>
+    <h1>PCOS Nutrition</h1><p>Hormone-conscious nutrition to manage symptoms, insulin resistance, and fertility goals.</p></div></section>
+  <section class="section"><div class="container split">
+    <div class="reveal"><div class="image-panel clay"><svg viewBox="0 0 400 460"><circle cx="200" cy="180" r="130" fill="#fff" opacity="0.14"/></svg></div></div>
+    <div class="reveal"><span class="eyebrow">The Approach</span><h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Working with your hormones, not against them</h2>
+      <p style="margin-top:16px;color:var(--ink-soft)">PCOS looks different for everyone. We build an anti-inflammatory, insulin-conscious plan that supports regular cycles, energy, and long-term metabolic health.</p>
+      <div class="tag-row"><span>Insulin Resistance</span><span>Irregular Cycles</span><span>Fertility Support</span><span>Weight &amp; Energy</span><span>Acne &amp; Skin</span></div>
+      <div class="hero-cta"><a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a></div>
+    </div>
+  </div></section>
+  <section class="section band-cream"><div class="container">
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Focus Areas</span><h2>How we support PCOS</h2></div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div><h3>Blood Sugar Balance</h3><p>Low-glycemic meal patterns to improve insulin sensitivity.</p></div>
+      <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4.97-3.6-9-7.02-9-11.2C3 6.6 5.6 4 8.6 4 10.4 4 11.4 5 12 5.9 12.6 5 13.6 4 15.4 4 18.4 4 21 6.6 21 9.8 21 14 17 17.4 12 21Z"/></svg></div><h3>Anti-Inflammatory Foods</h3><p>Reducing inflammation linked to hormonal symptoms.</p></div>
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Cycle-Aware Planning</h3><p>Adjusting nutrition &amp; movement across your cycle phases.</p></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="container" style="text-align:center"><a href="#" class="btn btn-primary" data-nav="book">Book PCOS Consultation</a></div></section>
+</div>
+
+<!-- DIABETES -->
+<div class="page" id="page-diabetes">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / <a href="#" data-nav="services">Services</a> / Diabetes Management</span>
+    <h1>Diabetes Management</h1><p>Certified diabetes education paired with practical, real-food meal strategies.</p></div></section>
+  <section class="section"><div class="container split">
+    <div class="reveal"><span class="eyebrow">The Approach</span><h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Steady blood sugar, without the spreadsheet stress</h2>
+      <p style="margin-top:16px;color:var(--ink-soft)">Whether you're managing prediabetes, Type 1, or Type 2, we translate your labs and CGM data into a livable, satisfying way of eating — coordinated with your care team.</p>
+      <ul class="check-list">
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Carbohydrate counting &amp; consistent meal timing guidance</li>
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>CGM &amp; A1C-informed adjustments</li>
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Coordination with your endocrinologist or PCP</li>
+      </ul>
+      <div class="stat-strip">
+        <div><strong>1.2%</strong><span>Avg. A1C Reduction*</span></div>
+        <div><strong>600+</strong><span>Diabetes Clients Coached</span></div>
+        <div><strong>92%</strong><span>Report Fewer Blood Sugar Swings</span></div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--ink-faint);margin-top:8px">*Based on internal client-reported outcomes over 4 months; individual results vary.</p>
+      <div class="hero-cta"><a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a></div>
+    </div>
+    <div class="reveal"><div class="image-panel"><svg viewBox="0 0 400 460"><circle cx="200" cy="180" r="130" fill="#fff" opacity="0.14"/></svg></div></div>
+  </div></section>
+
+  <section class="section band-cream"><div class="container">
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Who We Help</span><h2>Support for every type of diabetes</h2></div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M20 4 12 12"/></svg></div><h3>Type 1 &amp; Type 2</h3><p>Individualized plans for insulin users and oral-medication management.</p></div>
+      <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></div><h3>Prediabetes Reversal</h3><p>Evidence-based lifestyle programs shown to reduce progression risk.</p></div>
+      <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div><h3>Gestational Diabetes</h3><p>Safe, effective meal plans for a healthy pregnancy.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Program Includes</span><h2>What's inside your diabetes plan</h2></div>
+      <div class="grid-4 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/></svg></div><h3>Carb-Conscious Meal Plan</h3><p>Consistent-carb menus matched to your medication timing.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/></svg></div><h3>CGM &amp; Lab Review</h3><p>We interpret your glucose trends and A1C together, in plain language.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>Care Team Coordination</h3><p>Direct communication with your endocrinologist or PCP, with consent.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Unlimited Messaging</h3><p>Ask questions between sessions and stay accountable day to day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-cream"><div class="container">
+    <div class="quote-block reveal"><p>"For the first time, my glucose readings feel predictable instead of random — and I actually enjoy what I'm eating."</p><span>— Diabetes Management client, 5 months</span></div>
+    <div style="text-align:center;margin-top:20px"><a href="#" class="btn btn-primary" data-nav="book">Book a Diabetes Consultation</a></div>
+  </div></section>
+</div>
+
+<!-- PREGNANCY -->
+<div class="page" id="page-pregnancy">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / <a href="#" data-nav="services">Services</a> / Pregnancy &amp; Postpartum</span>
+    <h1>Pregnancy &amp; Postpartum Nutrition</h1><p>Nourishing support from conception through the fourth trimester and beyond.</p></div></section>
+  <section class="section"><div class="container split">
+    <div class="reveal"><div class="image-panel clay"><svg viewBox="0 0 400 460"><circle cx="200" cy="180" r="130" fill="#fff" opacity="0.14"/></svg></div></div>
+    <div class="reveal"><span class="eyebrow">The Approach</span><h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Care for every trimester — and after</h2>
+      <p style="margin-top:16px;color:var(--ink-soft)">From nausea-friendly nutrition in the first trimester to healing, energy-restoring meals postpartum, we support both your needs and your baby's development at every stage.</p>
+      <div class="tag-row"><span>Morning Sickness</span><span>Gestational Diabetes</span><span>Healthy Weight Gain</span><span>Breastfeeding Nutrition</span><span>Postpartum Recovery</span></div>
+      <div class="hero-cta"><a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a></div>
+    </div>
+  </div></section>
+  <section class="section band-cream"><div class="container">
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Trimester by Trimester</span><h2>A plan that evolves with you</h2></div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card"><h3>First Trimester</h3><p>Managing nausea and aversions while covering key nutrient needs like folate.</p></div>
+      <div class="card clay"><h3>Second &amp; Third</h3><p>Balanced weight gain, blood sugar stability, and iron &amp; calcium support.</p></div>
+      <div class="card"><h3>Postpartum</h3><p>Recovery-focused nutrition for healing, energy, and breastfeeding, if applicable.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Program Includes</span><h2>What's inside your pregnancy plan</h2></div>
+      <div class="grid-4 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/></svg></div><h3>Trimester-Specific Menus</h3><p>Meal ideas that evolve with your changing needs and appetite.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>Symptom-Specific Support</h3><p>Practical relief strategies for nausea, heartburn, and fatigue.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-8-8"/><path d="M20 4 12 12"/></svg></div><h3>Gestational Diabetes Care</h3><p>Blood-sugar-friendly plans if you're managing GD.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>OB Coordination</h3><p>We collaborate with your OB or midwife for aligned, safe care.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-cream"><div class="container">
+    <div class="quote-block reveal"><p>"Postpartum, I finally had energy again — and breastfeeding felt sustainable instead of depleting."</p><span>— Pregnancy &amp; Postpartum client, second trimester through 4 months postpartum</span></div>
+    <div style="text-align:center;margin-top:20px"><a href="#" class="btn btn-primary" data-nav="book">Book a Pregnancy Consultation</a></div>
+  </div></section>
+</div>
+
+<!-- CHILD -->
+<div class="page" id="page-child">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / <a href="#" data-nav="services">Services</a> / Child Nutrition</span>
+    <h1>Child Nutrition</h1><p>Raising confident, intuitive eaters — from toddlers to teens.</p></div></section>
+  <section class="section"><div class="container split">
+    <div class="reveal"><span class="eyebrow">The Approach</span><h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.3rem)">Pressure-free, positive food relationships</h2>
+      <p style="margin-top:16px;color:var(--ink-soft)">We coach parents through picky eating, growth concerns, food allergies, and school-age nutrition — using the Division of Responsibility framework to keep mealtimes calm.</p>
+      <ul class="check-list">
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Picky eating &amp; food-refusal strategies</li>
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Growth chart &amp; nutrient-adequacy review</li>
+        <li><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>School lunch &amp; snack planning</li>
+      </ul>
+      <div class="hero-cta"><a href="#" class="btn btn-primary" data-nav="book">Book Consultation</a></div>
+    </div>
+    <div class="reveal"><div class="image-panel"><svg viewBox="0 0 400 460"><circle cx="200" cy="180" r="130" fill="#fff" opacity="0.14"/></svg></div></div>
+  </div></section>
+
+  <section class="section band-cream"><div class="container">
+    <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">By Age &amp; Stage</span><h2>Guidance that grows with your child</h2></div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card"><h3>Toddlers (1&ndash;3)</h3><p>Introducing variety, handling food refusal, and building trust around new foods.</p></div>
+      <div class="card clay"><h3>School-Age (4&ndash;12)</h3><p>Balanced lunches, snack planning, and navigating school &amp; social eating.</p></div>
+      <div class="card"><h3>Teens (13&ndash;18)</h3><p>Supporting growth, sports nutrition, and a healthy body image during adolescence.</p></div>
+    </div>
+  </div></section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Program Includes</span><h2>What's inside your child nutrition plan</h2></div>
+      <div class="grid-4 reveal-stagger">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 21c0-4 3-6 6-6s6 2 6 6"/></svg></div><h3>Growth Chart Review</h3><p>We assess your child's growth trends alongside their pediatrician's data.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 19.5V4.6c0-.6.4-1 1-1.1L19 2v17l-14 1.5Z"/></svg></div><h3>Parent Coaching</h3><p>Scripts and strategies for calmer, pressure-free family mealtimes.</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M12 21c-4.97-3.6-9-7.02-9-11.2C3 6.6 5.6 4 8.6 4 10.4 4 11.4 5 12 5.9 12.6 5 13.6 4 15.4 4 18.4 4 21 6.6 21 9.8 21 14 17 17.4 12 21Z"/></svg></div><h3>Allergy-Aware Planning</h3><p>Safe, nutritionally complete menus for common food allergies.</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Ongoing Check-Ins</h3><p>Regular touchpoints as your child grows and needs evolve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-cream"><div class="container">
+    <div class="quote-block reveal"><p>"Dinner used to be a battle every night. Now my son actually asks to help cook. I didn't think that was possible."</p><span>— Child Nutrition client, parent of a 6-year-old</span></div>
+    <div style="text-align:center;margin-top:20px"><a href="#" class="btn btn-primary" data-nav="book">Book a Child Nutrition Consultation</a></div>
+  </div></section>
+</div>
+
+<!-- ============================= MEAL PLANS ============================= -->
+<div class="page" id="page-meal-plans">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Meal Plans</span>
+    <h1>Custom Meal Plans</h1><p>Weekly menus, recipes, and grocery lists — tailored to your goals and taste.</p></div></section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Sample Week</span><h2>Explore a full 7-day plan</h2><p>Pick a style below, then click through the week. Your real plan is fully personalized to your calories, allergies, and taste.</p></div>
+
+      <div class="mealplan-tabs" role="tablist" aria-label="Meal plan style">
+        <button class="filter-chip active" data-meal="balanced">Balanced</button>
+        <button class="filter-chip" data-meal="pcos">PCOS-Friendly</button>
+        <button class="filter-chip" data-meal="diabetes">Diabetes-Friendly</button>
+        <button class="filter-chip" data-meal="plant">Plant-Forward</button>
+      </div>
+      <div class="mealplan-tabs" role="tablist" aria-label="Day of week" id="dayTabs">
+        <button class="filter-chip active" data-day="0">Mon</button>
+        <button class="filter-chip" data-day="1">Tue</button>
+        <button class="filter-chip" data-day="2">Wed</button>
+        <button class="filter-chip" data-day="3">Thu</button>
+        <button class="filter-chip" data-day="4">Fri</button>
+        <button class="filter-chip" data-day="5">Sat</button>
+        <button class="filter-chip" data-day="6">Sun</button>
+      </div>
+
+      <div class="grid-4" id="mealPlanGrid">
+        <div class="day-card"><h4>Breakfast</h4><ul><li><b id="mpB-label">Balanced:</b> <span id="mpB">Greek yogurt, berries &amp; walnuts</span></li></ul></div>
+        <div class="day-card"><h4>Lunch</h4><ul><li><b id="mpL-label">Balanced:</b> <span id="mpL">Grilled chicken grain bowl</span></li></ul></div>
+        <div class="day-card"><h4>Dinner</h4><ul><li><b id="mpD-label">Balanced:</b> <span id="mpD">Salmon, quinoa &amp; roasted veg</span></li></ul></div>
+        <div class="day-card"><h4>Snack</h4><ul><li><b id="mpS-label">Balanced:</b> <span id="mpS">Apple with almond butter</span></li></ul></div>
+      </div>
+      <p style="text-align:center;margin-top:34px;color:var(--ink-soft)">Sample only — every plan is fully customized to your calorie needs, allergies, and preferences during your program.</p>
+      <div style="text-align:center;margin-top:22px"><a href="#" class="btn btn-primary" data-nav="book">Get My Custom Plan</a></div>
+    </div>
+  </section>
+
+  <section class="section band-cream">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">How It Works</span><h2>From order to your inbox in 3 steps</h2></div>
+      <div class="process-track reveal-stagger" style="grid-template-columns:repeat(3,1fr)">
+        <div class="process-step"><div class="process-num">1</div><h4>Tell Us Your Goals</h4><p>Share preferences, allergies, budget, and cooking time via a short intake form.</p></div>
+        <div class="process-step"><div class="process-num">2</div><h4>We Build Your Week</h4><p>Amara designs a full 7-day plan matched to your calorie &amp; nutrient targets.</p></div>
+        <div class="process-step"><div class="process-num">3</div><h4>Cook With Confidence</h4><p>Receive recipes, portions, and an organized grocery list — updated weekly or biweekly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head center reveal"><span class="eyebrow" style="justify-content:center">Meal Plan Pricing</span><h2>Choose your cadence</h2></div>
+      <div class="pricing-grid reveal-stagger">
+        <div class="price-card"><h3>À La Carte Week</h3><div class="price">$65<span>/week</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>One custom 7-day plan</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Recipes &amp; grocery list</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>One round of revisions</li></ul>
+          <a href="#" class="btn btn-outline" data-nav="book">Get This Plan</a></div>
+        <div class="price-card featured"><span class="tag">Best Value</span><h3>Monthly Meal Plans</h3><div class="price">$180<span>/month</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>4 weekly plans, refreshed each week</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Recipes, macros &amp; grocery lists</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Unlimited swaps &amp; messaging</li></ul>
+          <a href="#" class="btn btn-primary" data-nav="book">Get This Plan</a></div>
+        <div class="price-card"><h3>Meal Plan + Coaching</h3><div class="price">$310<span>/month</span></div><ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Everything in Monthly Meal Plans</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>2 live coaching sessions/month</li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Progress tracking &amp; lab review</li></ul>
+          <a href="#" class="btn btn-outline" data-nav="book">Get This Plan</a></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= TESTIMONIALS PAGE ============================= -->
+<div class="page" id="page-testimonials">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Testimonials</span>
+    <h1>Client Stories</h1><p>A few of the journeys we've had the privilege to support.</p></div></section>
+
+  <div class="trust-strip">
+    <div class="container">
+      <span class="label">Client Outcomes</span>
+      <div class="badges">
+        <div><strong style="font-family:var(--font-display);font-size:1.3rem;color:var(--sage-deep)">4.9/5</strong>&nbsp;average rating (312 reviews)</div>
+        <div><strong style="font-family:var(--font-display);font-size:1.3rem;color:var(--sage-deep)">98%</strong>&nbsp;would recommend to a friend</div>
+        <div><strong style="font-family:var(--font-display);font-size:1.3rem;color:var(--sage-deep)">2,400+</strong>&nbsp;clients guided since 2019</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section"><div class="container">
+    <div class="filter-row reveal">
+      <button class="filter-chip active">All Stories</button><button class="filter-chip">Weight Loss</button><button class="filter-chip">PCOS</button><button class="filter-chip">Diabetes</button><button class="filter-chip">Pregnancy</button><button class="filter-chip">Family</button>
+    </div>
+    <div class="grid-3 reveal-stagger">
+      <div class="card"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"Amara made me feel heard in a way no other provider had."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Priya M.</strong><span>PCOS Program, 14 months</span></div></div></div>
+      <div class="card clay"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"The most sustainable approach to weight loss I've ever tried."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>James O.</strong><span>Weight Loss Program, 6 months</span></div></div></div>
+      <div class="card"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"My daughter finally enjoys mealtime instead of dreading it."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Daniela R.</strong><span>Child Nutrition, 4 months</span></div></div></div>
+      <div class="card clay"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"Coordinated beautifully with my OB — I felt fully supported."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Sana K.</strong><span>Pregnancy Nutrition, full term</span></div></div></div>
+      <div class="card"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"My A1C dropped a full point without feeling deprived."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Marcus T.</strong><span>Diabetes Management, 5 months</span></div></div></div>
+      <div class="card clay"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"Practical, kind, and genuinely knowledgeable. Highly recommend."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Elena V.</strong><span>1:1 Coaching, 1 year</span></div></div></div>
+      <div class="card"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"I stopped yo-yo dieting for the first time in 15 years."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Rachel B.</strong><span>Weight Loss Program, 9 months</span></div></div></div>
+      <div class="card clay"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"My cycles regulated for the first time since my diagnosis."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Noor H.</strong><span>PCOS Program, 10 months</span></div></div></div>
+      <div class="card"><div class="testi-stars" style="justify-content:flex-start">★★★★★</div><q style="font-family:var(--font-display);font-style:italic;display:block;margin:14px 0">"Postpartum, I had energy again and stopped fearing food."</q><div class="testi-person" style="justify-content:flex-start"><span class="testi-avatar"></span><div><strong>Grace L.</strong><span>Postpartum Nutrition, 5 months</span></div></div></div>
+    </div>
+  </div></section>
+
+  <section class="band section-tight"><div class="container" style="text-align:center">
+    <h2>Ready to write your own success story?</h2>
+    <p style="color:#D8DBCE;margin-top:10px">Your first consultation includes a full intake and a clear plan forward.</p>
+    <div style="margin-top:24px"><a href="#" class="btn btn-clay" data-nav="book">Book Consultation</a></div>
+  </div></section>
+</div>
+
+<!-- ============================= BLOG ============================= -->
+<div class="page" id="page-blog">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Blog</span>
+    <h1>The Journal</h1><p>Practical, evidence-based articles on nutrition, health, and habits.</p></div></section>
+  <section class="section-tight">
+    <div class="container">
+      <div class="reveal" style="display:grid;grid-template-columns:1.1fr 1fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-soft);border:1px solid var(--line)">
+        <div style="background:linear-gradient(150deg,var(--sage-light),var(--sage-deep));min-height:280px"></div>
+        <div style="background:#fff;padding:40px">
+          <span class="badge">Featured &middot; Weight Health</span>
+          <h2 style="margin-top:16px;font-size:1.6rem;line-height:1.25">The Truth About Metabolism &amp; Weight Loss Plateaus</h2>
+          <p style="margin-top:12px;color:var(--ink-soft)">Why the scale stalls even when you're doing everything "right" — and the science-backed adjustments that actually move the needle.</p>
+          <div class="blog-meta" style="margin-top:18px"><span>Amara Reyes, RD</span><span>&middot;</span><span>8 min read</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-row" id="blogFilters">
+        <button class="filter-chip active" data-cat="all">All</button><button class="filter-chip" data-cat="Weight Health">Weight Health</button><button class="filter-chip" data-cat="PCOS">PCOS</button><button class="filter-chip" data-cat="Diabetes">Diabetes</button><button class="filter-chip" data-cat="Pregnancy">Pregnancy</button><button class="filter-chip" data-cat="Family">Family</button>
+      </div>
+      <div class="grid-3 reveal-stagger" id="blogGrid">
+        <article class="blog-card" data-cat="Weight Health"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sage-light),var(--sage-deep))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Weight Health</span><span>&middot;</span><span>6 min read</span></div><h3>Why Crash Diets Fail — And What Actually Works</h3><p>The metabolic science behind sustainable fat loss, explained simply.</p></div></article>
+        <article class="blog-card" data-cat="PCOS"><div class="blog-thumb" style="background:linear-gradient(135deg,#E3B98F,var(--clay-deep))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>PCOS</span><span>&middot;</span><span>5 min read</span></div><h3>The Best Foods for Insulin Resistance</h3><p>A practical grocery-list guide for managing PCOS through diet.</p></div></article>
+        <article class="blog-card" data-cat="Diabetes"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sand),#C9B892)"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Diabetes</span><span>&middot;</span><span>7 min read</span></div><h3>Reading Your CGM: A Beginner's Guide</h3><p>How to translate continuous glucose data into everyday food choices.</p></div></article>
+        <article class="blog-card" data-cat="Family"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sage-light),var(--clay))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Family</span><span>&middot;</span><span>4 min read</span></div><h3>Ending Mealtime Battles With Picky Eaters</h3><p>The Division of Responsibility, explained for real family dinners.</p></div></article>
+        <article class="blog-card" data-cat="Pregnancy"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sage-deep),var(--ink))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Pregnancy</span><span>&middot;</span><span>6 min read</span></div><h3>Eating for Two, Not "Twice as Much"</h3><p>What your body actually needs, trimester by trimester.</p></div></article>
+        <article class="blog-card" data-cat="Weight Health"><div class="blog-thumb" style="background:linear-gradient(135deg,#CBB27E,var(--clay-deep))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Weight Health</span><span>&middot;</span><span>5 min read</span></div><h3>Protein Timing: Does It Really Matter?</h3><p>Separating research from marketing when it comes to protein.</p></div></article>
+        <article class="blog-card" data-cat="PCOS"><div class="blog-thumb" style="background:linear-gradient(135deg,#C9B892,var(--sage-deep))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>PCOS</span><span>&middot;</span><span>6 min read</span></div><h3>PCOS &amp; Exercise: Finding the Right Balance</h3><p>Why more cardio isn't always better, and what to prioritize instead.</p></div></article>
+        <article class="blog-card" data-cat="Diabetes"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--clay),var(--ink))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Diabetes</span><span>&middot;</span><span>5 min read</span></div><h3>Building a Diabetes-Friendly Holiday Plate</h3><p>Enjoying celebrations without the blood sugar rollercoaster.</p></div></article>
+        <article class="blog-card" data-cat="Family"><div class="blog-thumb" style="background:linear-gradient(135deg,var(--sand-deep),var(--sage-light))"></div>
+          <div class="blog-body"><div class="blog-meta"><span>Family</span><span>&middot;</span><span>5 min read</span></div><h3>Packing School Lunches Kids Will Actually Eat</h3><p>Balanced, low-stress lunchbox ideas for busy weekday mornings.</p></div></article>
+      </div>
+      <p style="text-align:center;color:var(--ink-faint);font-size:0.88rem;margin-top:12px" id="blogEmptyMsg" hidden>No articles in this category yet — check back soon.</p>
+    </div>
+  </section>
+  <section class="band section-tight"><div class="container" style="text-align:center"><h2>Get monthly nutrition insights</h2><p style="color:#D8DBCE;margin-top:8px">No spam — just science-backed tips, once a month.</p>
+    <form class="newsletter-form" style="margin:22px auto 0;justify-content:center" id="newsletterFormBlog">
+      <input type="email" required placeholder="Your email address" aria-label="Email address">
+      <button type="submit" class="btn btn-clay">Subscribe</button>
+    </form>
+  </div></section>
+</div>
+
+<!-- ============================= FAQ ============================= -->
+<div class="page" id="page-faq">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / FAQ</span>
+    <h1>Frequently Asked Questions</h1><p>Everything you need to know before your first session.</p></div></section>
+  <section class="section">
+    <div class="container">
+      <div class="faq-list" style="margin-bottom:52px">
+        <p class="eyebrow" style="margin-bottom:6px">Getting Started</p>
+        <details class="faq-item" open><summary>Do you accept insurance?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">We're out-of-network with most plans but provide a detailed superbill after each session that you can submit for reimbursement. Many PPO plans cover 50–80% of nutrition counseling.</div></details>
+        <details class="faq-item"><summary>What happens in the first session?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Your 60-minute intake covers your health history, current habits, labs (if available), and goals. You'll leave with a clear understanding of your personalized plan and next steps.</div></details>
+        <details class="faq-item"><summary>What should I bring to my first appointment?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Recent labs (if you have them), a list of current medications or supplements, and a general sense of your typical day of eating. Nothing else is required — we'll fill in the rest together.</div></details>
+        <details class="faq-item"><summary>Do you offer a free discovery call?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Yes — a complimentary 15-minute call lets us confirm we're the right fit before you commit to a full program. You can select this option on the booking page.</div></details>
+      </div>
+
+      <div class="faq-list" style="margin-bottom:52px">
+        <p class="eyebrow" style="margin-bottom:6px">Logistics &amp; Scheduling</p>
+        <details class="faq-item"><summary>Do you offer virtual appointments?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Yes — all services are available via secure telehealth video, in addition to in-person visits at our office. Most clients choose a mix of both.</div></details>
+        <details class="faq-item"><summary>What is your cancellation policy?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">We ask for at least 24 hours' notice to reschedule or cancel a session without a fee, so we can offer the slot to another client.</div></details>
+        <details class="faq-item"><summary>Which states or regions do you serve?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">In-person visits are available in the Portland, OR metro area. Telehealth is available to clients across most U.S. states — ask during your discovery call if you're unsure about yours.</div></details>
+        <details class="faq-item"><summary>How often will we meet?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Most programs start with weekly or biweekly sessions, tapering to monthly check-ins as habits solidify. Your cadence is adjusted to your goals and progress.</div></details>
+      </div>
+
+      <div class="faq-list">
+        <p class="eyebrow" style="margin-bottom:6px">Programs &amp; Results</p>
+        <details class="faq-item"><summary>How soon will I see results?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Every body is different, but most clients notice improved energy and habits within 2–4 weeks, with measurable clinical changes (labs, weight, symptoms) over 8–12 weeks.</div></details>
+        <details class="faq-item"><summary>Can you work with my doctor or specialist?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Absolutely — with your consent, we regularly coordinate care with physicians, endocrinologists, OBs, and therapists to ensure your plan aligns with your full care team.</div></details>
+        <details class="faq-item"><summary>Do you work with people who have food allergies or intolerances?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">Yes — every meal plan and recommendation is built around your allergies, intolerances, and any medical restrictions from the very first session.</div></details>
+        <details class="faq-item"><summary>Is this a "diet," and will I have to give up my favorite foods?<span class="plus"><svg class="icon" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="faq-a">No. Our approach is not restriction-based — we build flexible frameworks that include foods you enjoy, because plans you can't sustain don't create lasting change.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band section-tight"><div class="container" style="text-align:center">
+    <h2>Still have a question?</h2>
+    <p style="color:#D8DBCE;margin-top:10px">Reach out directly — we typically respond within one business day.</p>
+    <div style="margin-top:24px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a href="#" class="btn btn-clay" data-nav="contact">Contact Us</a><a href="#" class="btn btn-ghost" data-nav="book">Book Consultation</a></div>
+  </div></section>
+</div>
+
+<!-- ============================= CONTACT ============================= -->
+<div class="page" id="page-contact">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Contact</span>
+    <h1>Get in Touch</h1><p>Questions about programs, pricing, or insurance? We'd love to help.</p></div></section>
+  <section class="section">
+    <div class="container split">
+      <div class="reveal">
+        <div class="form-card">
+          <h3 style="margin-bottom:22px">Send a message</h3>
+          <form id="contactForm">
+            <div class="form-grid">
+              <div class="field"><label for="cName">Full Name</label><input id="cName" type="text" required placeholder="Jane Doe"></div>
+              <div class="field"><label for="cEmail">Email</label><input id="cEmail" type="email" required placeholder="jane@email.com"></div>
+              <div class="field"><label for="cPhone">Phone (optional)</label><input id="cPhone" type="tel" placeholder="(555) 000-0000"></div>
+              <div class="field"><label for="cTopic">Topic</label><select id="cTopic"><option>General Question</option><option>Weight Loss</option><option>PCOS</option><option>Diabetes</option><option>Pregnancy &amp; Postpartum</option><option>Child Nutrition</option><option>Insurance / Billing</option></select></div>
+              <div class="field full"><label for="cMsg">Message</label><textarea id="cMsg" required placeholder="Tell us a bit about what you're looking for..."></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;margin-top:6px">Send Message</button>
+            <div class="form-success" id="contactSuccess"><svg class="icon" viewBox="0 0 24 24" style="color:var(--sage-deep)"><path d="M20 6 9 17l-5-5"/></svg> Thanks — we'll reply within one business day.</div>
+          </form>
+        </div>
+      </div>
+      <div class="reveal" style="display:flex;flex-direction:column;gap:26px;">
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div><h3>Email</h3><p>hello@bloomfieldnutrition.com</p></div>
+        <div class="card clay"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1Z"/></svg></div><h3>Phone</h3><p>(555) 214-7890</p></div>
+        <div class="card"><div class="ic-wrap"><svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Office</h3><p>128 Willow Grove Lane, Suite 4<br>Portland, OR 97205</p></div>
+        <div class="map-wrap"><iframe src="https://www.google.com/maps?q=Portland%20Oregon%20wellness%20clinic&output=embed" title="Office location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================= BOOK APPOINTMENT ============================= -->
+<div class="page" id="page-book">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Book an Appointment</span>
+    <h1>Book Your Consultation</h1><p>Choose a program and preferred time — we'll confirm within 24 hours.</p></div></section>
+  <section class="section">
+    <div class="container" style="max-width:820px;margin:0 auto;">
+      <div class="form-card reveal">
+        <form id="bookForm">
+          <div class="form-grid">
+            <div class="field"><label for="bName">Full Name</label><input id="bName" type="text" required placeholder="Jane Doe"></div>
+            <div class="field"><label for="bEmail">Email</label><input id="bEmail" type="email" required placeholder="jane@email.com"></div>
+            <div class="field"><label for="bPhone">Phone</label><input id="bPhone" type="tel" required placeholder="(555) 000-0000"></div>
+            <div class="field"><label for="bService">Program</label><select id="bService">
+              <option>Initial Nutrition Assessment</option><option>Weight Loss Program</option><option>PCOS Nutrition</option><option>Diabetes Management</option><option>Pregnancy &amp; Postpartum Nutrition</option><option>Child Nutrition</option><option>Free Discovery Call</option>
+            </select></div>
+            <div class="field"><label for="bDate">Preferred Date</label><input id="bDate" type="date" required></div>
+            <div class="field"><label for="bTime">Preferred Time</label><select id="bTime"><option>9:00 AM</option><option>10:30 AM</option><option>12:00 PM</option><option>1:30 PM</option><option>3:00 PM</option><option>4:30 PM</option></select></div>
+            <div class="field full"><label for="bMode">Session Type</label><select id="bMode"><option>Video Telehealth</option><option>In-Person, Portland Office</option><option>Phone Call</option></select></div>
+            <div class="field full"><label for="bNotes">Anything we should know?</label><textarea id="bNotes" placeholder="Health history, goals, questions..."></textarea></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:6px">Confirm Appointment Request</button>
+          <div class="form-success" id="bookSuccess"><svg class="icon" viewBox="0 0 24 24" style="color:var(--sage-deep)"><path d="M20 6 9 17l-5-5"/></svg> Request received! A confirmation email is on its way.</div>
         </form>
-
-        <div id="calcResults" class="calc-result">
-          <div>
-            <div style="font-size:0.85rem; color:var(--ink-soft);">Your Body Mass Index (BMI)</div>
-            <div class="val" id="resBMI">0.0</div>
-            <div id="resCategory" style="font-weight:700; color:var(--clay);">Normal</div>
-          </div>
-          <div style="text-align:right;">
-            <div style="font-size:0.85rem; color:var(--ink-soft);">Est. Maintenance Calories</div>
-            <div class="val" id="resCalories">0 kcal</div>
-            <div style="font-size:0.8rem; color:var(--sage-deep);">Target ~<span id="resDeficit">0</span> kcal for weight loss</div>
-          </div>
-        </div>
       </div>
+      <p style="text-align:center;color:var(--ink-soft);margin-top:22px;font-size:0.9rem">Prefer to chat first? <a href="#" style="color:var(--sage-deep);font-weight:600" id="waLinkInline">Message us on WhatsApp</a> instead.</p>
     </div>
   </section>
-</main>
+</div>
 
-<!-- ============================= PAGE 4: ABOUT ============================= -->
-<main id="about" class="page">
+<!-- ============================= TOOLS: BMI / CALORIE CALCULATOR (accessible from footer + services) ============================= -->
+<div class="page" id="page-tools">
+  <section class="page-hero"><div class="container"><span class="breadcrumb"><a href="#" data-nav="home">Home</a> / Health Calculators</span>
+    <h1>Free Health Calculators</h1><p>Quick estimates to start the conversation — not a substitute for personalized guidance.</p></div></section>
   <section class="section">
     <div class="container">
-      <div class="grid-2" style="align-items:center;">
-        <div>
-          <span class="eyebrow">About DietCare</span>
-          <h2>Evidence-Based Dietetics With Empathy</h2>
-          <p style="margin-top:16px; color:var(--ink-soft);">
-            At DietCare, we believe nutrition should simplify your life, not complicate it. Many people in Pakistan struggle with unsustainable diets that completely alienate them from their culture and home meals.
-          </p>
-          <p style="margin-top:12px; color:var(--ink-soft);">
-            Our qualified Registered Dietitians focus on metabolic health, sustainable lifestyle changes, and evidence-based nutrition science to guide you towards lasting health goals.
-          </p>
+      <div class="calc-tabs">
+        <button class="calc-tab active" data-calc="bmi">BMI Calculator</button>
+        <button class="calc-tab" data-calc="calorie">Calorie Calculator</button>
+      </div>
+
+      <div class="calc-card" id="calcBMI">
+        <div class="unit-toggle" id="bmiUnitToggle">
+          <button class="active" data-unit="metric">Metric</button>
+          <button data-unit="imperial">Imperial</button>
         </div>
-        <div class="hero-card" style="background:var(--sage-pale);">
-          <h3>Our Clinical Promise</h3>
-          <ul style="margin-top:16px; display:flex; flex-direction:column; gap:12px;">
-            <li>🌱 <strong>No Fake Supplements:</strong> Real whole foods first.</li>
-            <li>🍛 <strong>Cultural Integration:</strong> Meals you and your family can eat together.</li>
-            <li>📈 <strong>Long-Term Habits:</strong> Guidance on how to maintain results for life.</li>
-          </ul>
+        <div class="field-row" id="bmiFieldsMetric">
+          <div class="field"><label for="bmiHeightCm">Height (cm)</label><input type="number" id="bmiHeightCm" placeholder="170" min="1"></div>
+          <div class="field"><label for="bmiWeightKg">Weight (kg)</label><input type="number" id="bmiWeightKg" placeholder="68" min="1"></div>
+        </div>
+        <div class="field-row" id="bmiFieldsImperial" style="display:none">
+          <div class="field"><label for="bmiHeightFt">Height (ft)</label><input type="number" id="bmiHeightFt" placeholder="5" min="1"></div>
+          <div class="field"><label for="bmiHeightIn">Height (in)</label><input type="number" id="bmiHeightIn" placeholder="7" min="0" max="11"></div>
+          <div class="field"><label for="bmiWeightLb">Weight (lb)</label><input type="number" id="bmiWeightLb" placeholder="150" min="1"></div>
+        </div>
+        <button class="btn btn-primary" id="bmiCalcBtn">Calculate BMI</button>
+        <div class="calc-result" id="bmiResult" style="display:none">
+          <div><div class="num" id="bmiNum">--</div><div class="cat" id="bmiCat">—</div></div>
+          <div style="flex:1;min-width:220px"><div class="calc-scale"><span class="bmi-bar-under"></span><span class="bmi-bar-normal"></span><span class="bmi-bar-over"></span><span class="bmi-bar-obese"></span></div>
+          <p style="font-size:0.8rem;color:var(--ink-faint);margin-top:8px">Underweight &middot; Normal &middot; Overweight &middot; Obese</p></div>
         </div>
       </div>
+
+      <div class="calc-card" id="calcCalorie" style="display:none;margin-top:32px">
+        <div class="unit-toggle" id="calSexToggle">
+          <button class="active" data-sex="female">Female</button>
+          <button data-sex="male">Male</button>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="calAge">Age</label><input type="number" id="calAge" placeholder="32" min="1"></div>
+          <div class="field"><label for="calHeight">Height (cm)</label><input type="number" id="calHeight" placeholder="165" min="1"></div>
+          <div class="field"><label for="calWeight">Weight (kg)</label><input type="number" id="calWeight" placeholder="65" min="1"></div>
+          <div class="field"><label for="calActivity">Activity Level</label><select id="calActivity">
+            <option value="1.2">Sedentary (little/no exercise)</option>
+            <option value="1.375">Light (1-3 days/week)</option>
+            <option value="1.55" selected>Moderate (3-5 days/week)</option>
+            <option value="1.725">Active (6-7 days/week)</option>
+            <option value="1.9">Very Active (athlete)</option>
+          </select></div>
+        </div>
+        <button class="btn btn-primary" id="calCalcBtn">Calculate Calories</button>
+        <div class="calc-result" id="calResult" style="display:none">
+          <div><div class="num" id="calNum">--</div><div class="cat">Estimated Daily Calories (Maintenance)</div></div>
+          <div style="font-size:0.85rem;color:var(--ink-soft)">
+            <div>Weight loss: <strong id="calLoss">--</strong> kcal/day</div>
+            <div>Weight gain: <strong id="calGain">--</strong> kcal/day</div>
+          </div>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--ink-faint);font-size:0.85rem;margin-top:24px">These tools give general estimates using standard formulas (BMI &amp; Mifflin-St Jeor). For a plan tailored to your body and goals, <a href="#" data-nav="book" style="color:var(--sage-deep);font-weight:600">book a consultation</a>.</p>
     </div>
   </section>
+</div>
+
 </main>
 
-<!-- ============================= PAGE 5: CONTACT / BOOKING ============================= -->
-<main id="contact" class="page">
-  <section class="section">
-    <div class="container" style="max-width:680px;">
-      <div class="section-head center">
-        <span class="eyebrow">Book Your Session</span>
-        <h2>Start Your Health Journey</h2>
-        <p>Fill in the form below and our team will contact you via WhatsApp to confirm your appointment.</p>
-      </div>
-
-      <div class="card">
-        <form onsubmit="handleForm(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" required placeholder="e.g. Fatima Khan">
-            </div>
-            <div class="form-group">
-              <label>WhatsApp Number</label>
-              <input type="tel" required placeholder="0300 1234567">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label>City</label>
-              <input type="text" placeholder="Lahore, Karachi, Islamabad...">
-            </div>
-            <div class="form-group">
-              <label>Main Health Goal</label>
-              <select>
-                <option>Weight Loss</option>
-                <option>PCOS Management</option>
-                <option>Diabetes / Insulin Resistance</option>
-                <option>Weight Gain / Muscle Building</option>
-                <option>General Health & Wellbeing</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-bottom:20px;">
-            <label>Any specific medical concerns or questions?</label>
-            <textarea placeholder="Tell us briefly about your dietary habits or medical history..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width:100%;">Submit Booking Request</button>
-        </form>
-
-        <div id="formSuccess" style="display:none; margin-top:20px; padding:16px; background:var(--sage-pale); border-radius:var(--radius-sm); color:var(--sage-deep); text-align:center; font-weight:600;">
-          ✓ Thank you! Your booking request has been sent. We will message you on WhatsApp shortly.
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<footer>
+<!-- ============================= FOOTER ============================= -->
+<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <div class="brand" style="color:#fff; margin-bottom:12px;">
-          <span class="mark" style="background:#fff; color:var(--sage-deep);">D</span> DietCare<em>.pk</em>
+      <div class="footer-brand">
+        <a href="#" class="brand" data-nav="home" style="color:#fff">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#F6F1E7"/><path d="M20 30C20 30 11 25.5 11 18.5C11 14 14.5 11 18 11C19.3 11 20 12 20 12C20 12 20.7 11 22 11C25.5 11 29 14 29 18.5C29 25.5 20 30 20 30Z" fill="#465239"/></svg>
+          <span class="name" style="color:#fff">Bloomfield <em style="color:#E3B98F">Nutrition</em></span>
+        </a>
+        <p>Evidence-based, warm nutrition counseling for weight, hormones, chronic conditions, and family health.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg class="icon" viewBox="0 0 24 24" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg class="icon" viewBox="0 0 24 24" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg class="icon" viewBox="0 0 24 24" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v6M7 7v.01M11 16v-4a2 2 0 0 1 4 0v4M11 12v4"/></svg></a>
+          <a href="#" aria-label="Pinterest"><svg class="icon" viewBox="0 0 24 24" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 18c1-3 1.5-5 1.5-5m3-4c2 0 3.5 1.5 3 4s-2 3.5-3.5 3-1.5-2-1-3.5"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg class="icon" viewBox="0 0 24 24" stroke-width="1.6"><rect x="2" y="6" width="20" height="12" rx="4"/><path d="M10 9.5v5l5-2.5-5-2.5z" fill="#fff" stroke="none"/></svg></a>
         </div>
-        <p style="font-size:0.9rem; color:#D0D4C5; max-width:280px;">Evidence-based nutrition & personalized dietetics clinic in Pakistan.</p>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4>Programs</h4>
         <ul>
-          <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-          <li><a href="#" onclick="showPage('programs'); return false;">Programs</a></li>
-          <li><a href="#" onclick="showPage('calc'); return false;">Calculators</a></li>
-          <li><a href="#" onclick="showPage('contact'); return false;">Book Session</a></li>
+          <li><a href="#" data-nav="weight-loss">Weight Loss</a></li>
+          <li><a href="#" data-nav="pcos">PCOS Nutrition</a></li>
+          <li><a href="#" data-nav="diabetes">Diabetes Management</a></li>
+          <li><a href="#" data-nav="pregnancy">Pregnancy &amp; Postpartum</a></li>
+          <li><a href="#" data-nav="child">Child Nutrition</a></li>
         </ul>
       </div>
       <div>
-        <h4>Specialties</h4>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="#">Weight Management</a></li>
-          <li><a href="#">PCOS Diet Protocol</a></li>
-          <li><a href="#">Diabetes Care</a></li>
-          <li><a href="#">Clinical Nutrition</a></li>
+          <li><a href="#" data-nav="about">About</a></li>
+          <li><a href="#" data-nav="meal-plans">Meal Plans</a></li>
+          <li><a href="#" data-nav="blog">Blog</a></li>
+          <li><a href="#" data-nav="tools">Health Calculators</a></li>
+          <li><a href="#" data-nav="faq">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact Us</h4>
-        <ul>
-          <li>📱 WhatsApp: +92 300 0000000</li>
-          <li>📧 info@dietcare.pk</li>
-          <li>📍 Lahore | Karachi | Online PK</li>
-        </ul>
+        <h4>Stay Nourished</h4>
+        <p style="color:#D8DBCE;font-size:0.88rem;margin-bottom:12px">Monthly nutrition tips, straight to your inbox.</p>
+        <form class="newsletter-form" id="newsletterFormFooter">
+          <input type="email" required placeholder="Email address" aria-label="Email address">
+          <button type="submit" class="btn btn-clay btn-sm">Join</button>
+        </form>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 DietCare PK. All rights reserved.</div>
-      <div>Personalised Nutrition Care</div>
+      <span>&copy; <span id="yr"></span> Bloomfield Nutrition. All rights reserved.</span>
+      <span>Portland, OR &middot; Licensed Registered Dietitian, LDN</span>
     </div>
   </div>
 </footer>
 
-<button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to Top">↑</button>
+<!-- WhatsApp + back to top -->
+<div class="fab-wrap">
+  <button class="back-top" id="backTop" aria-label="Back to top"><svg class="icon" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+  <a class="fab" id="waFab" href="https://wa.me/15552147890?text=Hi%20Bloomfield%20Nutrition%2C%20I%27d%20like%20to%20ask%20about..." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1s-.6.8-.7.9c-.1.1-.3.2-.5.1a6.5 6.5 0 0 1-1.9-1.2 7.1 7.1 0 0 1-1.3-1.6c-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4c0-.1-.5-1.3-.7-1.7-.2-.4-.4-.4-.5-.4h-.4a.9.9 0 0 0-.6.3 2.7 2.7 0 0 0-.8 2 4.7 4.7 0 0 0 1 2.5 10.7 10.7 0 0 0 4.1 3.6c.6.2 1 .4 1.4.5a3.4 3.4 0 0 0 1.5.1 2.5 2.5 0 0 0 1.6-1.1c.2-.3.2-.6.1-.7Z"/></svg>
+  </a>
+</div>
 
-<!-- ============================= JAVASCRIPT ============================= -->
+<div class="toast" id="toast"><svg class="icon" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Done</span></div>
+
 <script>
-// SPA Navigation Switcher
-function showPage(pageId) {
-  document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
 
-  const targetPage = document.getElementById(pageId);
-  if(targetPage) {
-    targetPage.classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
+  /* ---------- ROUTING ---------- */
+  var pageIds = ['home','about','services','weight-loss','pcos','diabetes','pregnancy','child','meal-plans','testimonials','blog','faq','contact','book','tools'];
+  var titles = {
+    'home':'Bloomfield Nutrition — Amara Reyes, RD',
+    'about':'About the Dietitian — Bloomfield Nutrition',
+    'services':'Services — Bloomfield Nutrition',
+    'weight-loss':'Weight Loss Programs — Bloomfield Nutrition',
+    'pcos':'PCOS Nutrition — Bloomfield Nutrition',
+    'diabetes':'Diabetes Management — Bloomfield Nutrition',
+    'pregnancy':'Pregnancy & Postpartum Nutrition — Bloomfield Nutrition',
+    'child':'Child Nutrition — Bloomfield Nutrition',
+    'meal-plans':'Meal Plans — Bloomfield Nutrition',
+    'testimonials':'Testimonials — Bloomfield Nutrition',
+    'blog':'Blog — Bloomfield Nutrition',
+    'faq':'FAQ — Bloomfield Nutrition',
+    'contact':'Contact — Bloomfield Nutrition',
+    'book':'Book an Appointment — Bloomfield Nutrition',
+    'tools':'Health Calculators — Bloomfield Nutrition'
+  };
+
+  function navigateTo(id){
+    if(pageIds.indexOf(id) === -1) id = 'home';
+    pageIds.forEach(function(p){
+      var el = document.getElementById('page-'+p);
+      if(el) el.classList.toggle('active', p === id);
+    });
+    document.title = titles[id] || titles['home'];
+    window.scrollTo({top:0, behavior:'auto'});
+    document.querySelectorAll('.nav-link[data-nav]').forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('data-nav') === id);
+    });
+    closeMobileNav();
+    window.location.hash = id;
+    triggerReveal();
   }
 
-  // Close mobile nav if open
-  document.getElementById('mainNav').classList.remove('open');
-}
+  document.addEventListener('click', function(e){
+    var t = e.target.closest('[data-nav]');
+    if(t){
+      e.preventDefault();
+      navigateTo(t.getAttribute('data-nav'));
+    }
+  });
 
-// Mobile Nav Toggle
-function toggleMenu() {
-  document.getElementById('mainNav').classList.toggle('open');
-}
+  window.addEventListener('hashchange', function(){
+    var id = window.location.hash.replace('#','');
+    if(id) navigateTo(id);
+  });
+  var initial = window.location.hash.replace('#','');
+  navigateTo(initial || 'home');
 
-// Meal Tab Switcher
-function showMealTab(type) {
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
+  /* ---------- MOBILE NAV ---------- */
+  var menuToggle = document.getElementById('menuToggle');
+  var mainNav = document.getElementById('mainNav');
+  var navScrim = document.getElementById('navScrim');
+  var menuIcon = document.getElementById('menuIcon');
 
-  document.getElementById('pcos-meal').style.display = 'none';
-  document.getElementById('weight-meal').style.display = 'none';
-  document.getElementById('diabetic-meal').style.display = 'none';
+  function openMobileNav(){
+    mainNav.classList.add('open'); navScrim.classList.add('show');
+    menuToggle.setAttribute('aria-expanded','true');
+    menuIcon.innerHTML = '<line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/>';
+  }
+  function closeMobileNav(){
+    mainNav.classList.remove('open'); navScrim.classList.remove('show');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuIcon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  }
+  menuToggle.addEventListener('click', function(){
+    mainNav.classList.contains('open') ? closeMobileNav() : openMobileNav();
+  });
+  navScrim.addEventListener('click', closeMobileNav);
 
-  document.getElementById(type + '-meal').style.display = 'block';
-}
+  document.querySelectorAll('.has-dropdown > button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if(window.innerWidth <= 980){
+        var parent = btn.closest('.has-dropdown');
+        parent.classList.toggle('open');
+        btn.setAttribute('aria-expanded', parent.classList.contains('open'));
+      }
+    });
+  });
 
-// FAQ Accordion Toggle
-function toggleFaq(btn) {
-  const item = btn.parentElement;
-  item.classList.toggle('open');
-}
+  /* ---------- HEADER SCROLL STATE ---------- */
+  var header = document.getElementById('siteHeader');
+  var backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    var sc = window.scrollY > 12;
+    header.classList.toggle('scrolled', sc);
+    backTop.classList.toggle('show', window.scrollY > 500);
+  });
+  backTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
 
-// BMI & Calorie Calculator Logic
-function calculateHealth(e) {
-  e.preventDefault();
+  /* ---------- REVEAL ON SCROLL ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, {threshold:0.12});
+  function triggerReveal(){
+    document.querySelectorAll('.page.active .reveal, .page.active .reveal-stagger').forEach(function(el){
+      io.observe(el);
+    });
+  }
+  triggerReveal();
 
-  const gender = document.getElementById('calcGender').value;
-  const age = parseFloat(document.getElementById('calcAge').value);
-  const weight = parseFloat(document.getElementById('calcWeight').value);
-  const height = parseFloat(document.getElementById('calcHeight').value);
-  const activity = parseFloat(document.getElementById('calcActivity').value);
+  /* ---------- TESTIMONIAL SLIDER ---------- */
+  var slides = document.querySelectorAll('.testi-slide');
+  var dots = document.querySelectorAll('.testi-dot');
+  var tIndex = 0, tTimer;
+  function showSlide(i){
+    slides.forEach(function(s,idx){ s.classList.toggle('active', idx===i); });
+    dots.forEach(function(d,idx){ d.classList.toggle('active', idx===i); });
+    tIndex = i;
+  }
+  document.getElementById('testiNext') && document.getElementById('testiNext').addEventListener('click', function(){ showSlide((tIndex+1)%slides.length); resetTimer(); });
+  document.getElementById('testiPrev') && document.getElementById('testiPrev').addEventListener('click', function(){ showSlide((tIndex-1+slides.length)%slides.length); resetTimer(); });
+  dots.forEach(function(d,idx){ d.addEventListener('click', function(){ showSlide(idx); resetTimer(); }); });
+  function resetTimer(){ clearInterval(tTimer); tTimer = setInterval(function(){ showSlide((tIndex+1)%slides.length); }, 6000); }
+  resetTimer();
 
-  // BMI Calculation
-  const heightInMeters = height / 100;
-  const bmi = (weight / (heightInMeters * heightInMeters)).toFixed(1);
+  /* ---------- BEFORE/AFTER SLIDER ---------- */
+  var baRange = document.getElementById('baRange');
+  var baAfter = document.getElementById('baAfter');
+  var baHandle = document.getElementById('baHandle');
+  if(baRange){
+    baRange.addEventListener('input', function(){
+      var v = baRange.value;
+      baAfter.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+      baHandle.style.left = v + '%';
+    });
+  }
 
-  let category = '';
-  if(bmi < 18.5) category = 'Underweight';
-  else if(bmi < 24.9) category = 'Normal weight';
-  else if(bmi < 29.9) category = 'Overweight';
-  else category = 'Obese';
+  /* ---------- FAQ (native details, no JS needed, but close others optionally) ---------- */
 
-  // BMR Calculation (Mifflin-St Jeor)
-  let bmr = (10 * weight) + (6.25 * height) - (5 * age);
-  bmr = gender === 'male' ? bmr + 5 : bmr - 161;
+  /* ---------- CALCULATOR TABS ---------- */
+  document.querySelectorAll('.calc-tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.calc-tab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var which = btn.getAttribute('data-calc');
+      document.getElementById('calcBMI').style.display = which === 'bmi' ? 'block' : 'none';
+      document.getElementById('calcCalorie').style.display = which === 'calorie' ? 'block' : 'none';
+    });
+  });
 
-  const tdee = Math.round(bmr * activity);
-  const deficit = Math.round(tdee - 450);
+  /* ---------- BMI CALCULATOR ---------- */
+  var bmiUnit = 'metric';
+  document.querySelectorAll('#bmiUnitToggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#bmiUnitToggle button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      bmiUnit = btn.getAttribute('data-unit');
+      document.getElementById('bmiFieldsMetric').style.display = bmiUnit === 'metric' ? 'grid' : 'none';
+      document.getElementById('bmiFieldsImperial').style.display = bmiUnit === 'imperial' ? 'grid' : 'none';
+    });
+  });
+  document.getElementById('bmiCalcBtn').addEventListener('click', function(){
+    var bmi;
+    if(bmiUnit === 'metric'){
+      var h = parseFloat(document.getElementById('bmiHeightCm').value);
+      var w = parseFloat(document.getElementById('bmiWeightKg').value);
+      if(!h || !w){ return; }
+      bmi = w / Math.pow(h/100, 2);
+    } else {
+      var ft = parseFloat(document.getElementById('bmiHeightFt').value) || 0;
+      var inch = parseFloat(document.getElementById('bmiHeightIn').value) || 0;
+      var lb = parseFloat(document.getElementById('bmiWeightLb').value);
+      var totalIn = ft*12 + inch;
+      if(!totalIn || !lb){ return; }
+      bmi = (lb / (totalIn*totalIn)) * 703;
+    }
+    var cat = 'Normal';
+    if(bmi < 18.5) cat = 'Underweight';
+    else if(bmi < 25) cat = 'Normal';
+    else if(bmi < 30) cat = 'Overweight';
+    else cat = 'Obese';
+    document.getElementById('bmiNum').textContent = bmi.toFixed(1);
+    document.getElementById('bmiCat').textContent = cat;
+    document.getElementById('bmiResult').style.display = 'flex';
+  });
 
-  // Display Results
-  document.getElementById('resBMI').innerText = bmi;
-  document.getElementById('resCategory').innerText = category;
-  document.getElementById('resCalories').innerText = tdee + ' kcal';
-  document.getElementById('resDeficit').innerText = deficit;
+  /* ---------- CALORIE CALCULATOR (Mifflin-St Jeor) ---------- */
+  var calSex = 'female';
+  document.querySelectorAll('#calSexToggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#calSexToggle button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      calSex = btn.getAttribute('data-sex');
+    });
+  });
+  document.getElementById('calCalcBtn').addEventListener('click', function(){
+    var age = parseFloat(document.getElementById('calAge').value);
+    var h = parseFloat(document.getElementById('calHeight').value);
+    var w = parseFloat(document.getElementById('calWeight').value);
+    var act = parseFloat(document.getElementById('calActivity').value);
+    if(!age || !h || !w){ return; }
+    var bmr = calSex === 'male' ? (10*w + 6.25*h - 5*age + 5) : (10*w + 6.25*h - 5*age - 161);
+    var maintenance = bmr * act;
+    document.getElementById('calNum').textContent = Math.round(maintenance).toLocaleString();
+    document.getElementById('calLoss').textContent = Math.round(maintenance - 500).toLocaleString();
+    document.getElementById('calGain').textContent = Math.round(maintenance + 300).toLocaleString();
+    document.getElementById('calResult').style.display = 'flex';
+  });
 
-  document.getElementById('calcResults').classList.add('show');
-}
+  /* ---------- MEAL PLAN: 7-DAY DATA BY STYLE ---------- */
+  var mealWeekData = {
+    balanced: [
+      {b:'Greek yogurt, berries & walnuts', l:'Grilled chicken grain bowl', d:'Salmon, quinoa & roasted veg', s:'Apple with almond butter'},
+      {b:'Veggie omelet & whole-grain toast', l:'Turkey & avocado wrap', d:'Beef stir-fry with brown rice', s:'Trail mix, small handful'},
+      {b:'Overnight oats with banana', l:'Mediterranean chickpea salad', d:'Baked chicken thighs & sweet potato', s:'Carrot sticks & hummus'},
+      {b:'Smoothie: spinach, mango & yogurt', l:'Leftover baked chicken bowl', d:'Shrimp tacos with cabbage slaw', s:'String cheese & grapes'},
+      {b:'Cottage cheese & pineapple', l:'Tuna salad lettuce wraps', d:'Turkey chili with cornbread', s:'Rice cakes & peanut butter'},
+      {b:'Whole-grain pancakes & berries', l:'Leftover turkey chili', d:'Grilled steak, roasted potatoes & greens', s:'Popcorn, air-popped'},
+      {b:'Veggie breakfast burrito', l:'Quinoa & roasted veggie bowl', d:'Herb-roasted chicken & seasonal veg', s:'Greek yogurt with honey'}
+    ],
+    pcos: [
+      {b:'Veggie egg scramble & avocado', l:'Chickpea & spinach salad, olive oil', d:'Baked cod, farro & broccoli', s:'Handful of walnuts'},
+      {b:'Chia pudding with cinnamon', l:'Lentil soup & side salad', d:'Grilled chicken, wild rice & asparagus', s:'Celery & almond butter'},
+      {b:'Cottage cheese, flaxseed & berries', l:'Turkey & quinoa lettuce cups', d:'Baked salmon, sweet potato & greens', s:'Roasted chickpeas'},
+      {b:'Greek yogurt with pumpkin seeds', l:'Black bean & avocado bowl', d:'Shrimp & vegetable stir-fry, brown rice', s:'Handful of almonds'},
+      {b:'Veggie & goat cheese frittata', l:'Grilled chicken Cobb salad', d:'Turkey meatballs & zucchini noodles', s:'Apple with peanut butter'},
+      {b:'Overnight oats with chia & berries', l:'Leftover turkey meatballs', d:'Baked tofu, farro & roasted veg', s:'Cucumber & tzatziki'},
+      {b:'Smoothie: berries, spinach & flax', l:'Mediterranean tuna salad', d:'Herb chicken, lentils & greens', s:'Handful of walnuts'}
+    ],
+    diabetes: [
+      {b:'Steel-cut oats with cinnamon & flax', l:'Turkey lettuce wraps & hummus', d:'Grilled chicken, lentils & greens', s:'Cottage cheese & cucumber'},
+      {b:'Veggie egg muffins', l:'Chicken & black bean salad bowl', d:'Baked cod, quinoa & broccoli', s:'Small apple & string cheese'},
+      {b:'Greek yogurt with chia & berries', l:'Turkey & veggie wrap, whole grain', d:'Beef & broccoli stir-fry, cauliflower rice', s:'Handful of almonds'},
+      {b:'Avocado toast, whole grain', l:'Lentil & vegetable soup', d:'Grilled shrimp, farro & asparagus', s:'Celery & peanut butter'},
+      {b:'Cottage cheese & sliced peaches', l:'Chicken Caesar salad, light dressing', d:'Baked chicken, roasted veg & wild rice', s:'Edamame'},
+      {b:'Veggie scramble with turkey sausage', l:'Leftover baked chicken bowl', d:'Turkey chili, no added sugar', s:'Handful of walnuts'},
+      {b:'Protein smoothie, unsweetened', l:'Quinoa & chickpea salad', d:'Grilled salmon, green beans & barley', s:'Small pear & cheese'}
+    ],
+    plant: [
+      {b:'Chia pudding with berries', l:'Tofu buddha bowl with tahini', d:'Black bean & sweet potato chili', s:'Edamame with sea salt'},
+      {b:'Overnight oats with almond milk', l:'Lentil & quinoa salad', d:'Chickpea curry with brown rice', s:'Roasted chickpeas'},
+      {b:'Tofu scramble & greens', l:'Hummus & veggie grain bowl', d:'Vegetable stir-fry with tempeh', s:'Trail mix'},
+      {b:'Smoothie: banana, spinach & pea protein', l:'Black bean tacos with slaw', d:'Lentil bolognese with whole-grain pasta', s:'Apple & almond butter'},
+      {b:'Peanut butter oatmeal', l:'Falafel bowl with tzatziki alternative', d:'Stuffed peppers with quinoa & beans', s:'Carrot sticks & hummus'},
+      {b:'Tofu & veggie breakfast burrito', l:'Leftover stuffed peppers', d:'Chickpea & spinach coconut curry', s:'Handful of walnuts'},
+      {b:'Chia & berry parfait', l:'Mediterranean grain bowl', d:'BBQ jackfruit with roasted veg', s:'Rice cakes & almond butter'}
+    ]
+  };
+  var mealLabels = {balanced:'Balanced', pcos:'PCOS-Friendly', diabetes:'Diabetes-Friendly', plant:'Plant-Forward'};
+  var currentMealType = 'balanced', currentMealDay = 0;
 
-// Booking Form Submission Handler
-function handleForm(e) {
-  e.preventDefault();
-  document.getElementById('formSuccess').style.display = 'block';
-  e.target.reset();
-}
+  function renderMealPlan(){
+    var d = mealWeekData[currentMealType][currentMealDay];
+    var label = mealLabels[currentMealType];
+    document.getElementById('mpB-label').textContent = label + ':';
+    document.getElementById('mpL-label').textContent = label + ':';
+    document.getElementById('mpD-label').textContent = label + ':';
+    document.getElementById('mpS-label').textContent = label + ':';
+    document.getElementById('mpB').textContent = d.b;
+    document.getElementById('mpL').textContent = d.l;
+    document.getElementById('mpD').textContent = d.d;
+    document.getElementById('mpS').textContent = d.s;
+  }
+  document.querySelectorAll('.mealplan-tabs .filter-chip[data-meal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.mealplan-tabs .filter-chip[data-meal]').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentMealType = btn.getAttribute('data-meal');
+      renderMealPlan();
+    });
+  });
+  document.querySelectorAll('#dayTabs .filter-chip[data-day]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#dayTabs .filter-chip[data-day]').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentMealDay = parseInt(btn.getAttribute('data-day'), 10);
+      renderMealPlan();
+    });
+  });
+
+  /* ---------- BLOG FILTER CHIPS (real filtering) ---------- */
+  var blogCards = document.querySelectorAll('#blogGrid .blog-card');
+  document.querySelectorAll('#blogFilters .filter-chip').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('#blogFilters .filter-chip').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.getAttribute('data-cat');
+      var visibleCount = 0;
+      blogCards.forEach(function(card){
+        var match = cat === 'all' || card.getAttribute('data-cat') === cat;
+        card.style.display = match ? '' : 'none';
+        if(match) visibleCount++;
+      });
+      document.getElementById('blogEmptyMsg').hidden = visibleCount > 0;
+    });
+  });
+
+  /* ---------- TOAST ---------- */
+  var toast = document.getElementById('toast');
+  var toastMsg = document.getElementById('toastMsg');
+  var toastTimer;
+  function showToast(msg){
+    toastMsg.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 3600);
+  }
+
+  /* ---------- FORMS ---------- */
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('contactSuccess').classList.add('show');
+    showToast('Message sent — thank you!');
+    this.reset();
+  });
+  document.getElementById('bookForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('bookSuccess').classList.add('show');
+    showToast('Appointment request received!');
+    this.reset();
+  });
+  ['newsletterFormBlog','newsletterFormFooter'].forEach(function(id){
+    var f = document.getElementById(id);
+    if(f) f.addEventListener('submit', function(e){
+      e.preventDefault();
+      showToast('You\'re subscribed! Welcome to the journal.');
+      this.reset();
+    });
+  });
+
+})();
 </script>
 </body>
 </html>
